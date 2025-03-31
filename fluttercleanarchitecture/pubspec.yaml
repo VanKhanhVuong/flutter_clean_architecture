@@ -34,6 +34,12 @@ dependencies:
   # intl: ^0.20.2
   intl: ^0.20.2
 
+  # https://pub.dev/packages/google_fonts
+  google_fonts: ^6.2.1
+  
+  # https://pub.dev/packages/cupertino_icons
+  cupertino_icons: ^1.0.8
+
 
 dev_dependencies:
   flutter_test:
