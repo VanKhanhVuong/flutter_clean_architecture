@@ -3,7 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:fluttercleanarchitecture/core/data/local/secure_storage/flutter_secure_storage_provider.dart';
 import 'package:fluttercleanarchitecture/core/data/local/secure_storage/isecure_storage.dart';
 
-final flutterStorageProvider = Provider<ISecureStorage>((ref) {
+final secureStorageProvider = Provider<ISecureStorage>((ref) {
   // Dependency inversion principle (DIP)
   final secureStorage = ref.watch(flutterSecureStorageProvider);
   return SecureStorage(secureStorage);
