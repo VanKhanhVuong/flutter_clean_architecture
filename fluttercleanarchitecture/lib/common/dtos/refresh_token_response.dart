@@ -4,7 +4,7 @@ part 'refresh_token_response.freezed.dart';
 part 'refresh_token_response.g.dart';
 
 @freezed
-abstract class RefreshTokenResponse with _$RefreshTokenResponse {
+class RefreshTokenResponse with _$RefreshTokenResponse {
   const factory RefreshTokenResponse({
     @JsonKey(name: "user") required User user,
     @JsonKey(name: "access_token") required String accessToken,
@@ -16,7 +16,7 @@ abstract class RefreshTokenResponse with _$RefreshTokenResponse {
 }
 
 @freezed
-abstract class User with _$User {
+class User with _$User {
   const factory User({
     @JsonKey(name: "id") required int id,
     @JsonKey(name: "name") required String name,

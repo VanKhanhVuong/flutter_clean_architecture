@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,150 +9,242 @@ part of 'register_state.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
+
 /// @nodoc
 mixin _$RegisterState {
+  // RegisterModel? registerModel,
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool? get isSuccess => throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
+  Map<String, dynamic> get registerFrom => throw _privateConstructorUsedError;
 
-// RegisterModel? registerModel,
- bool get isLoading; bool? get isSuccess; String? get errorMessage; Map<String, dynamic> get registerFrom;
-/// Create a copy of RegisterState
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$RegisterStateCopyWith<RegisterState> get copyWith => _$RegisterStateCopyWithImpl<RegisterState>(this as RegisterState, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisterState&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.isSuccess, isSuccess) || other.isSuccess == isSuccess)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage)&&const DeepCollectionEquality().equals(other.registerFrom, registerFrom));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,isLoading,isSuccess,errorMessage,const DeepCollectionEquality().hash(registerFrom));
-
-@override
-String toString() {
-  return 'RegisterState(isLoading: $isLoading, isSuccess: $isSuccess, errorMessage: $errorMessage, registerFrom: $registerFrom)';
-}
-
-
+  /// Create a copy of RegisterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $RegisterStateCopyWith<RegisterState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $RegisterStateCopyWith<$Res>  {
-  factory $RegisterStateCopyWith(RegisterState value, $Res Function(RegisterState) _then) = _$RegisterStateCopyWithImpl;
-@useResult
-$Res call({
- bool isLoading, bool? isSuccess, String? errorMessage, Map<String, dynamic> registerFrom
-});
-
-
-
-
+abstract class $RegisterStateCopyWith<$Res> {
+  factory $RegisterStateCopyWith(
+    RegisterState value,
+    $Res Function(RegisterState) then,
+  ) = _$RegisterStateCopyWithImpl<$Res, RegisterState>;
+  @useResult
+  $Res call({
+    bool isLoading,
+    bool? isSuccess,
+    String? errorMessage,
+    Map<String, dynamic> registerFrom,
+  });
 }
+
 /// @nodoc
-class _$RegisterStateCopyWithImpl<$Res>
+class _$RegisterStateCopyWithImpl<$Res, $Val extends RegisterState>
     implements $RegisterStateCopyWith<$Res> {
-  _$RegisterStateCopyWithImpl(this._self, this._then);
+  _$RegisterStateCopyWithImpl(this._value, this._then);
 
-  final RegisterState _self;
-  final $Res Function(RegisterState) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of RegisterState
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? isLoading = null,Object? isSuccess = freezed,Object? errorMessage = freezed,Object? registerFrom = null,}) {
-  return _then(_self.copyWith(
-isLoading: null == isLoading ? _self.isLoading : isLoading // ignore: cast_nullable_to_non_nullable
-as bool,isSuccess: freezed == isSuccess ? _self.isSuccess : isSuccess // ignore: cast_nullable_to_non_nullable
-as bool?,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
-as String?,registerFrom: null == registerFrom ? _self.registerFrom : registerFrom // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
-  ));
-}
-
-}
-
-
-/// @nodoc
-
-
-class _RegisterState implements RegisterState {
-   _RegisterState({this.isLoading = false, this.isSuccess, this.errorMessage, final  Map<String, dynamic> registerFrom = const {}}): _registerFrom = registerFrom;
-  
-
-// RegisterModel? registerModel,
-@override@JsonKey() final  bool isLoading;
-@override final  bool? isSuccess;
-@override final  String? errorMessage;
- final  Map<String, dynamic> _registerFrom;
-@override@JsonKey() Map<String, dynamic> get registerFrom {
-  if (_registerFrom is EqualUnmodifiableMapView) return _registerFrom;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_registerFrom);
-}
-
-
-/// Create a copy of RegisterState
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$RegisterStateCopyWith<_RegisterState> get copyWith => __$RegisterStateCopyWithImpl<_RegisterState>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisterState&&(identical(other.isLoading, isLoading) || other.isLoading == isLoading)&&(identical(other.isSuccess, isSuccess) || other.isSuccess == isSuccess)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage)&&const DeepCollectionEquality().equals(other._registerFrom, _registerFrom));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,isLoading,isSuccess,errorMessage,const DeepCollectionEquality().hash(_registerFrom));
-
-@override
-String toString() {
-  return 'RegisterState(isLoading: $isLoading, isSuccess: $isSuccess, errorMessage: $errorMessage, registerFrom: $registerFrom)';
-}
-
-
+  /// Create a copy of RegisterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isLoading = null,
+    Object? isSuccess = freezed,
+    Object? errorMessage = freezed,
+    Object? registerFrom = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            isLoading:
+                null == isLoading
+                    ? _value.isLoading
+                    : isLoading // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            isSuccess:
+                freezed == isSuccess
+                    ? _value.isSuccess
+                    : isSuccess // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            errorMessage:
+                freezed == errorMessage
+                    ? _value.errorMessage
+                    : errorMessage // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            registerFrom:
+                null == registerFrom
+                    ? _value.registerFrom
+                    : registerFrom // ignore: cast_nullable_to_non_nullable
+                        as Map<String, dynamic>,
+          )
+          as $Val,
+    );
+  }
 }
 
 /// @nodoc
-abstract mixin class _$RegisterStateCopyWith<$Res> implements $RegisterStateCopyWith<$Res> {
-  factory _$RegisterStateCopyWith(_RegisterState value, $Res Function(_RegisterState) _then) = __$RegisterStateCopyWithImpl;
-@override @useResult
-$Res call({
- bool isLoading, bool? isSuccess, String? errorMessage, Map<String, dynamic> registerFrom
-});
-
-
-
-
+abstract class _$$RegisterStateImplCopyWith<$Res>
+    implements $RegisterStateCopyWith<$Res> {
+  factory _$$RegisterStateImplCopyWith(
+    _$RegisterStateImpl value,
+    $Res Function(_$RegisterStateImpl) then,
+  ) = __$$RegisterStateImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    bool isLoading,
+    bool? isSuccess,
+    String? errorMessage,
+    Map<String, dynamic> registerFrom,
+  });
 }
+
 /// @nodoc
-class __$RegisterStateCopyWithImpl<$Res>
-    implements _$RegisterStateCopyWith<$Res> {
-  __$RegisterStateCopyWithImpl(this._self, this._then);
+class __$$RegisterStateImplCopyWithImpl<$Res>
+    extends _$RegisterStateCopyWithImpl<$Res, _$RegisterStateImpl>
+    implements _$$RegisterStateImplCopyWith<$Res> {
+  __$$RegisterStateImplCopyWithImpl(
+    _$RegisterStateImpl _value,
+    $Res Function(_$RegisterStateImpl) _then,
+  ) : super(_value, _then);
 
-  final _RegisterState _self;
-  final $Res Function(_RegisterState) _then;
-
-/// Create a copy of RegisterState
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? isLoading = null,Object? isSuccess = freezed,Object? errorMessage = freezed,Object? registerFrom = null,}) {
-  return _then(_RegisterState(
-isLoading: null == isLoading ? _self.isLoading : isLoading // ignore: cast_nullable_to_non_nullable
-as bool,isSuccess: freezed == isSuccess ? _self.isSuccess : isSuccess // ignore: cast_nullable_to_non_nullable
-as bool?,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
-as String?,registerFrom: null == registerFrom ? _self._registerFrom : registerFrom // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,
-  ));
+  /// Create a copy of RegisterState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isLoading = null,
+    Object? isSuccess = freezed,
+    Object? errorMessage = freezed,
+    Object? registerFrom = null,
+  }) {
+    return _then(
+      _$RegisterStateImpl(
+        isLoading:
+            null == isLoading
+                ? _value.isLoading
+                : isLoading // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        isSuccess:
+            freezed == isSuccess
+                ? _value.isSuccess
+                : isSuccess // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        errorMessage:
+            freezed == errorMessage
+                ? _value.errorMessage
+                : errorMessage // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        registerFrom:
+            null == registerFrom
+                ? _value._registerFrom
+                : registerFrom // ignore: cast_nullable_to_non_nullable
+                    as Map<String, dynamic>,
+      ),
+    );
+  }
 }
 
+/// @nodoc
 
+class _$RegisterStateImpl implements _RegisterState {
+  _$RegisterStateImpl({
+    this.isLoading = false,
+    this.isSuccess,
+    this.errorMessage,
+    final Map<String, dynamic> registerFrom = const {},
+  }) : _registerFrom = registerFrom;
+
+  // RegisterModel? registerModel,
+  @override
+  @JsonKey()
+  final bool isLoading;
+  @override
+  final bool? isSuccess;
+  @override
+  final String? errorMessage;
+  final Map<String, dynamic> _registerFrom;
+  @override
+  @JsonKey()
+  Map<String, dynamic> get registerFrom {
+    if (_registerFrom is EqualUnmodifiableMapView) return _registerFrom;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_registerFrom);
+  }
+
+  @override
+  String toString() {
+    return 'RegisterState(isLoading: $isLoading, isSuccess: $isSuccess, errorMessage: $errorMessage, registerFrom: $registerFrom)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegisterStateImpl &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage) &&
+            const DeepCollectionEquality().equals(
+              other._registerFrom,
+              _registerFrom,
+            ));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    runtimeType,
+    isLoading,
+    isSuccess,
+    errorMessage,
+    const DeepCollectionEquality().hash(_registerFrom),
+  );
+
+  /// Create a copy of RegisterState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisterStateImplCopyWith<_$RegisterStateImpl> get copyWith =>
+      __$$RegisterStateImplCopyWithImpl<_$RegisterStateImpl>(this, _$identity);
 }
 
-// dart format on
+abstract class _RegisterState implements RegisterState {
+  factory _RegisterState({
+    final bool isLoading,
+    final bool? isSuccess,
+    final String? errorMessage,
+    final Map<String, dynamic> registerFrom,
+  }) = _$RegisterStateImpl;
+
+  // RegisterModel? registerModel,
+  @override
+  bool get isLoading;
+  @override
+  bool? get isSuccess;
+  @override
+  String? get errorMessage;
+  @override
+  Map<String, dynamic> get registerFrom;
+
+  /// Create a copy of RegisterState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RegisterStateImplCopyWith<_$RegisterStateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

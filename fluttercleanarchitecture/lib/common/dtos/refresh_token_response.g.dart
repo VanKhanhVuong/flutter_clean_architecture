@@ -6,23 +6,23 @@ part of 'refresh_token_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_RefreshTokenResponse _$RefreshTokenResponseFromJson(
+_$RefreshTokenResponseImpl _$$RefreshTokenResponseImplFromJson(
   Map<String, dynamic> json,
-) => _RefreshTokenResponse(
+) => _$RefreshTokenResponseImpl(
   user: User.fromJson(json['user'] as Map<String, dynamic>),
   accessToken: json['access_token'] as String,
   tokenType: json['token_type'] as String,
 );
 
-Map<String, dynamic> _$RefreshTokenResponseToJson(
-  _RefreshTokenResponse instance,
+Map<String, dynamic> _$$RefreshTokenResponseImplToJson(
+  _$RefreshTokenResponseImpl instance,
 ) => <String, dynamic>{
   'user': instance.user,
   'access_token': instance.accessToken,
   'token_type': instance.tokenType,
 };
 
-_User _$UserFromJson(Map<String, dynamic> json) => _User(
+_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
   id: (json['id'] as num).toInt(),
   name: json['name'] as String,
   email: json['email'] as String,
@@ -34,14 +34,15 @@ _User _$UserFromJson(Map<String, dynamic> json) => _User(
   updatedAt: DateTime.parse(json['updated_at'] as String),
 );
 
-Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'email': instance.email,
-  'email_verified_at': instance.emailVerifiedAt.toIso8601String(),
-  'otp_expires_at': instance.otpExpiresAt.toIso8601String(),
-  'verification_code': instance.verificationCode,
-  'role': instance.role,
-  'created_at': instance.createdAt.toIso8601String(),
-  'updated_at': instance.updatedAt.toIso8601String(),
-};
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'email': instance.email,
+      'email_verified_at': instance.emailVerifiedAt.toIso8601String(),
+      'otp_expires_at': instance.otpExpiresAt.toIso8601String(),
+      'verification_code': instance.verificationCode,
+      'role': instance.role,
+      'created_at': instance.createdAt.toIso8601String(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+    };

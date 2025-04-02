@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,148 +9,258 @@ part of 'register_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
+
+RegisterRequest _$RegisterRequestFromJson(Map<String, dynamic> json) {
+  return _RegisterRequest.fromJson(json);
+}
 
 /// @nodoc
 mixin _$RegisterRequest {
-
-@JsonKey(name: "name") String get name;@JsonKey(name: "email") String get email;@JsonKey(name: "password") String get password;@JsonKey(name: "password_confirmation") String get passwordConfirmation;
-/// Create a copy of RegisterRequest
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$RegisterRequestCopyWith<RegisterRequest> get copyWith => _$RegisterRequestCopyWithImpl<RegisterRequest>(this as RegisterRequest, _$identity);
+  @JsonKey(name: "name")
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: "email")
+  String get email => throw _privateConstructorUsedError;
+  @JsonKey(name: "password")
+  String get password => throw _privateConstructorUsedError;
+  @JsonKey(name: "password_confirmation")
+  String get passwordConfirmation => throw _privateConstructorUsedError;
 
   /// Serializes this RegisterRequest to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisterRequest&&(identical(other.name, name) || other.name == name)&&(identical(other.email, email) || other.email == email)&&(identical(other.password, password) || other.password == password)&&(identical(other.passwordConfirmation, passwordConfirmation) || other.passwordConfirmation == passwordConfirmation));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,name,email,password,passwordConfirmation);
-
-@override
-String toString() {
-  return 'RegisterRequest(name: $name, email: $email, password: $password, passwordConfirmation: $passwordConfirmation)';
-}
-
-
+  /// Create a copy of RegisterRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $RegisterRequestCopyWith<RegisterRequest> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $RegisterRequestCopyWith<$Res>  {
-  factory $RegisterRequestCopyWith(RegisterRequest value, $Res Function(RegisterRequest) _then) = _$RegisterRequestCopyWithImpl;
-@useResult
-$Res call({
-@JsonKey(name: "name") String name,@JsonKey(name: "email") String email,@JsonKey(name: "password") String password,@JsonKey(name: "password_confirmation") String passwordConfirmation
-});
-
-
-
-
+abstract class $RegisterRequestCopyWith<$Res> {
+  factory $RegisterRequestCopyWith(
+    RegisterRequest value,
+    $Res Function(RegisterRequest) then,
+  ) = _$RegisterRequestCopyWithImpl<$Res, RegisterRequest>;
+  @useResult
+  $Res call({
+    @JsonKey(name: "name") String name,
+    @JsonKey(name: "email") String email,
+    @JsonKey(name: "password") String password,
+    @JsonKey(name: "password_confirmation") String passwordConfirmation,
+  });
 }
+
 /// @nodoc
-class _$RegisterRequestCopyWithImpl<$Res>
+class _$RegisterRequestCopyWithImpl<$Res, $Val extends RegisterRequest>
     implements $RegisterRequestCopyWith<$Res> {
-  _$RegisterRequestCopyWithImpl(this._self, this._then);
+  _$RegisterRequestCopyWithImpl(this._value, this._then);
 
-  final RegisterRequest _self;
-  final $Res Function(RegisterRequest) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of RegisterRequest
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? email = null,Object? password = null,Object? passwordConfirmation = null,}) {
-  return _then(_self.copyWith(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String,password: null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
-as String,passwordConfirmation: null == passwordConfirmation ? _self.passwordConfirmation : passwordConfirmation // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  /// Create a copy of RegisterRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? email = null,
+    Object? password = null,
+    Object? passwordConfirmation = null,
+  }) {
+    return _then(
+      _value.copyWith(
+            name:
+                null == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String,
+            email:
+                null == email
+                    ? _value.email
+                    : email // ignore: cast_nullable_to_non_nullable
+                        as String,
+            password:
+                null == password
+                    ? _value.password
+                    : password // ignore: cast_nullable_to_non_nullable
+                        as String,
+            passwordConfirmation:
+                null == passwordConfirmation
+                    ? _value.passwordConfirmation
+                    : passwordConfirmation // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
 }
 
+/// @nodoc
+abstract class _$$RegisterRequestImplCopyWith<$Res>
+    implements $RegisterRequestCopyWith<$Res> {
+  factory _$$RegisterRequestImplCopyWith(
+    _$RegisterRequestImpl value,
+    $Res Function(_$RegisterRequestImpl) then,
+  ) = __$$RegisterRequestImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: "name") String name,
+    @JsonKey(name: "email") String email,
+    @JsonKey(name: "password") String password,
+    @JsonKey(name: "password_confirmation") String passwordConfirmation,
+  });
 }
 
+/// @nodoc
+class __$$RegisterRequestImplCopyWithImpl<$Res>
+    extends _$RegisterRequestCopyWithImpl<$Res, _$RegisterRequestImpl>
+    implements _$$RegisterRequestImplCopyWith<$Res> {
+  __$$RegisterRequestImplCopyWithImpl(
+    _$RegisterRequestImpl _value,
+    $Res Function(_$RegisterRequestImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of RegisterRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? email = null,
+    Object? password = null,
+    Object? passwordConfirmation = null,
+  }) {
+    return _then(
+      _$RegisterRequestImpl(
+        name:
+            null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        email:
+            null == email
+                ? _value.email
+                : email // ignore: cast_nullable_to_non_nullable
+                    as String,
+        password:
+            null == password
+                ? _value.password
+                : password // ignore: cast_nullable_to_non_nullable
+                    as String,
+        passwordConfirmation:
+            null == passwordConfirmation
+                ? _value.passwordConfirmation
+                : passwordConfirmation // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
 
 /// @nodoc
 @JsonSerializable()
+class _$RegisterRequestImpl implements _RegisterRequest {
+  const _$RegisterRequestImpl({
+    @JsonKey(name: "name") required this.name,
+    @JsonKey(name: "email") required this.email,
+    @JsonKey(name: "password") required this.password,
+    @JsonKey(name: "password_confirmation") required this.passwordConfirmation,
+  });
 
-class _RegisterRequest implements RegisterRequest {
-  const _RegisterRequest({@JsonKey(name: "name") required this.name, @JsonKey(name: "email") required this.email, @JsonKey(name: "password") required this.password, @JsonKey(name: "password_confirmation") required this.passwordConfirmation});
-  factory _RegisterRequest.fromJson(Map<String, dynamic> json) => _$RegisterRequestFromJson(json);
+  factory _$RegisterRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RegisterRequestImplFromJson(json);
 
-@override@JsonKey(name: "name") final  String name;
-@override@JsonKey(name: "email") final  String email;
-@override@JsonKey(name: "password") final  String password;
-@override@JsonKey(name: "password_confirmation") final  String passwordConfirmation;
+  @override
+  @JsonKey(name: "name")
+  final String name;
+  @override
+  @JsonKey(name: "email")
+  final String email;
+  @override
+  @JsonKey(name: "password")
+  final String password;
+  @override
+  @JsonKey(name: "password_confirmation")
+  final String passwordConfirmation;
 
-/// Create a copy of RegisterRequest
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$RegisterRequestCopyWith<_RegisterRequest> get copyWith => __$RegisterRequestCopyWithImpl<_RegisterRequest>(this, _$identity);
+  @override
+  String toString() {
+    return 'RegisterRequest(name: $name, email: $email, password: $password, passwordConfirmation: $passwordConfirmation)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$RegisterRequestToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegisterRequestImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.passwordConfirmation, passwordConfirmation) ||
+                other.passwordConfirmation == passwordConfirmation));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, name, email, password, passwordConfirmation);
+
+  /// Create a copy of RegisterRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisterRequestImplCopyWith<_$RegisterRequestImpl> get copyWith =>
+      __$$RegisterRequestImplCopyWithImpl<_$RegisterRequestImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$RegisterRequestImplToJson(this);
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisterRequest&&(identical(other.name, name) || other.name == name)&&(identical(other.email, email) || other.email == email)&&(identical(other.password, password) || other.password == password)&&(identical(other.passwordConfirmation, passwordConfirmation) || other.passwordConfirmation == passwordConfirmation));
+abstract class _RegisterRequest implements RegisterRequest {
+  const factory _RegisterRequest({
+    @JsonKey(name: "name") required final String name,
+    @JsonKey(name: "email") required final String email,
+    @JsonKey(name: "password") required final String password,
+    @JsonKey(name: "password_confirmation")
+    required final String passwordConfirmation,
+  }) = _$RegisterRequestImpl;
+
+  factory _RegisterRequest.fromJson(Map<String, dynamic> json) =
+      _$RegisterRequestImpl.fromJson;
+
+  @override
+  @JsonKey(name: "name")
+  String get name;
+  @override
+  @JsonKey(name: "email")
+  String get email;
+  @override
+  @JsonKey(name: "password")
+  String get password;
+  @override
+  @JsonKey(name: "password_confirmation")
+  String get passwordConfirmation;
+
+  /// Create a copy of RegisterRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RegisterRequestImplCopyWith<_$RegisterRequestImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,name,email,password,passwordConfirmation);
-
-@override
-String toString() {
-  return 'RegisterRequest(name: $name, email: $email, password: $password, passwordConfirmation: $passwordConfirmation)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$RegisterRequestCopyWith<$Res> implements $RegisterRequestCopyWith<$Res> {
-  factory _$RegisterRequestCopyWith(_RegisterRequest value, $Res Function(_RegisterRequest) _then) = __$RegisterRequestCopyWithImpl;
-@override @useResult
-$Res call({
-@JsonKey(name: "name") String name,@JsonKey(name: "email") String email,@JsonKey(name: "password") String password,@JsonKey(name: "password_confirmation") String passwordConfirmation
-});
-
-
-
-
-}
-/// @nodoc
-class __$RegisterRequestCopyWithImpl<$Res>
-    implements _$RegisterRequestCopyWith<$Res> {
-  __$RegisterRequestCopyWithImpl(this._self, this._then);
-
-  final _RegisterRequest _self;
-  final $Res Function(_RegisterRequest) _then;
-
-/// Create a copy of RegisterRequest
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? email = null,Object? password = null,Object? passwordConfirmation = null,}) {
-  return _then(_RegisterRequest(
-name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String,password: null == password ? _self.password : password // ignore: cast_nullable_to_non_nullable
-as String,passwordConfirmation: null == passwordConfirmation ? _self.passwordConfirmation : passwordConfirmation // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-
-}
-
-// dart format on

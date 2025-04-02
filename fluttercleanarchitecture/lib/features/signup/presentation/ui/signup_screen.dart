@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fluttercleanarchitecture/common/extension/string_hardcoded.dart';
+import 'package:fluttercleanarchitecture/features/signup/presentation/ui/widget/signup_form_list.dart';
 import 'package:fluttercleanarchitecture/shared/styled_text.dart';
 
 class SignupScreen extends ConsumerStatefulWidget {
@@ -14,13 +16,11 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const StyledAppBarText('Signup Screen'),
+        title: StyledAppBarText('Sign Up'.hardcoded),
         backgroundColor: Colors.blue[500],
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(children: [StyledBodyText('Signup Screen')]),
-      ),
+      body: const SignUpFormList(),
     );
   }
 }

@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StyledButton extends StatelessWidget {
-  const StyledButton({super.key, required this.onPressed, required this.child});
+  const StyledButton(
+    String hardcoded, {
+    super.key,
+    required this.onPressed,
+    required this.child,
+  });
 
   final Future<void> Function()? onPressed; // ⚡ Sửa kiểu dữ liệu (Hàm async)
 

@@ -4,7 +4,7 @@ part 'register_response.freezed.dart';
 part 'register_response.g.dart';
 
 @freezed
-abstract class RegisterResponse with _$RegisterResponse {
+class RegisterResponse with _$RegisterResponse {
   const factory RegisterResponse({
     @JsonKey(name: "success") required bool success,
     @JsonKey(name: "message") required String message,

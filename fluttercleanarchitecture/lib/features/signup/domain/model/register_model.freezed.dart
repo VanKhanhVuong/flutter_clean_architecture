@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,136 +9,161 @@ part of 'register_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
+
 /// @nodoc
 mixin _$RegisterModel {
+  bool get success => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
 
- bool get success; String get message;
-/// Create a copy of RegisterModel
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$RegisterModelCopyWith<RegisterModel> get copyWith => _$RegisterModelCopyWithImpl<RegisterModel>(this as RegisterModel, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisterModel&&(identical(other.success, success) || other.success == success)&&(identical(other.message, message) || other.message == message));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,success,message);
-
-@override
-String toString() {
-  return 'RegisterModel(success: $success, message: $message)';
-}
-
-
+  /// Create a copy of RegisterModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $RegisterModelCopyWith<RegisterModel> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $RegisterModelCopyWith<$Res>  {
-  factory $RegisterModelCopyWith(RegisterModel value, $Res Function(RegisterModel) _then) = _$RegisterModelCopyWithImpl;
-@useResult
-$Res call({
- bool success, String message
-});
-
-
-
-
+abstract class $RegisterModelCopyWith<$Res> {
+  factory $RegisterModelCopyWith(
+    RegisterModel value,
+    $Res Function(RegisterModel) then,
+  ) = _$RegisterModelCopyWithImpl<$Res, RegisterModel>;
+  @useResult
+  $Res call({bool success, String message});
 }
+
 /// @nodoc
-class _$RegisterModelCopyWithImpl<$Res>
+class _$RegisterModelCopyWithImpl<$Res, $Val extends RegisterModel>
     implements $RegisterModelCopyWith<$Res> {
-  _$RegisterModelCopyWithImpl(this._self, this._then);
+  _$RegisterModelCopyWithImpl(this._value, this._then);
 
-  final RegisterModel _self;
-  final $Res Function(RegisterModel) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of RegisterModel
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? success = null,Object? message = null,}) {
-  return _then(_self.copyWith(
-success: null == success ? _self.success : success // ignore: cast_nullable_to_non_nullable
-as bool,message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-}
-
-
-/// @nodoc
-
-
-class _RegisterModel implements RegisterModel {
-   _RegisterModel({required this.success, required this.message});
-  
-
-@override final  bool success;
-@override final  String message;
-
-/// Create a copy of RegisterModel
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$RegisterModelCopyWith<_RegisterModel> get copyWith => __$RegisterModelCopyWithImpl<_RegisterModel>(this, _$identity);
-
-
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisterModel&&(identical(other.success, success) || other.success == success)&&(identical(other.message, message) || other.message == message));
-}
-
-
-@override
-int get hashCode => Object.hash(runtimeType,success,message);
-
-@override
-String toString() {
-  return 'RegisterModel(success: $success, message: $message)';
-}
-
-
+  /// Create a copy of RegisterModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? success = null, Object? message = null}) {
+    return _then(
+      _value.copyWith(
+            success:
+                null == success
+                    ? _value.success
+                    : success // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            message:
+                null == message
+                    ? _value.message
+                    : message // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
 }
 
 /// @nodoc
-abstract mixin class _$RegisterModelCopyWith<$Res> implements $RegisterModelCopyWith<$Res> {
-  factory _$RegisterModelCopyWith(_RegisterModel value, $Res Function(_RegisterModel) _then) = __$RegisterModelCopyWithImpl;
-@override @useResult
-$Res call({
- bool success, String message
-});
-
-
-
-
+abstract class _$$RegisterModelImplCopyWith<$Res>
+    implements $RegisterModelCopyWith<$Res> {
+  factory _$$RegisterModelImplCopyWith(
+    _$RegisterModelImpl value,
+    $Res Function(_$RegisterModelImpl) then,
+  ) = __$$RegisterModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool success, String message});
 }
+
 /// @nodoc
-class __$RegisterModelCopyWithImpl<$Res>
-    implements _$RegisterModelCopyWith<$Res> {
-  __$RegisterModelCopyWithImpl(this._self, this._then);
+class __$$RegisterModelImplCopyWithImpl<$Res>
+    extends _$RegisterModelCopyWithImpl<$Res, _$RegisterModelImpl>
+    implements _$$RegisterModelImplCopyWith<$Res> {
+  __$$RegisterModelImplCopyWithImpl(
+    _$RegisterModelImpl _value,
+    $Res Function(_$RegisterModelImpl) _then,
+  ) : super(_value, _then);
 
-  final _RegisterModel _self;
-  final $Res Function(_RegisterModel) _then;
-
-/// Create a copy of RegisterModel
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? success = null,Object? message = null,}) {
-  return _then(_RegisterModel(
-success: null == success ? _self.success : success // ignore: cast_nullable_to_non_nullable
-as bool,message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  /// Create a copy of RegisterModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? success = null, Object? message = null}) {
+    return _then(
+      _$RegisterModelImpl(
+        success:
+            null == success
+                ? _value.success
+                : success // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        message:
+            null == message
+                ? _value.message
+                : message // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
 }
 
+/// @nodoc
 
+class _$RegisterModelImpl implements _RegisterModel {
+  _$RegisterModelImpl({required this.success, required this.message});
+
+  @override
+  final bool success;
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'RegisterModel(success: $success, message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegisterModelImpl &&
+            (identical(other.success, success) || other.success == success) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, success, message);
+
+  /// Create a copy of RegisterModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisterModelImplCopyWith<_$RegisterModelImpl> get copyWith =>
+      __$$RegisterModelImplCopyWithImpl<_$RegisterModelImpl>(this, _$identity);
 }
 
-// dart format on
+abstract class _RegisterModel implements RegisterModel {
+  factory _RegisterModel({
+    required final bool success,
+    required final String message,
+  }) = _$RegisterModelImpl;
+
+  @override
+  bool get success;
+  @override
+  String get message;
+
+  /// Create a copy of RegisterModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RegisterModelImplCopyWith<_$RegisterModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

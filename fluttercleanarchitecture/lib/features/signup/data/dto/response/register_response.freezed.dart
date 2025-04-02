@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,142 +9,198 @@ part of 'register_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
+
+RegisterResponse _$RegisterResponseFromJson(Map<String, dynamic> json) {
+  return _RegisterResponse.fromJson(json);
+}
 
 /// @nodoc
 mixin _$RegisterResponse {
-
-@JsonKey(name: "success") bool get success;@JsonKey(name: "message") String get message;
-/// Create a copy of RegisterResponse
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$RegisterResponseCopyWith<RegisterResponse> get copyWith => _$RegisterResponseCopyWithImpl<RegisterResponse>(this as RegisterResponse, _$identity);
+  @JsonKey(name: "success")
+  bool get success => throw _privateConstructorUsedError;
+  @JsonKey(name: "message")
+  String get message => throw _privateConstructorUsedError;
 
   /// Serializes this RegisterResponse to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RegisterResponse&&(identical(other.success, success) || other.success == success)&&(identical(other.message, message) || other.message == message));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,success,message);
-
-@override
-String toString() {
-  return 'RegisterResponse(success: $success, message: $message)';
-}
-
-
+  /// Create a copy of RegisterResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $RegisterResponseCopyWith<RegisterResponse> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $RegisterResponseCopyWith<$Res>  {
-  factory $RegisterResponseCopyWith(RegisterResponse value, $Res Function(RegisterResponse) _then) = _$RegisterResponseCopyWithImpl;
-@useResult
-$Res call({
-@JsonKey(name: "success") bool success,@JsonKey(name: "message") String message
-});
-
-
-
-
+abstract class $RegisterResponseCopyWith<$Res> {
+  factory $RegisterResponseCopyWith(
+    RegisterResponse value,
+    $Res Function(RegisterResponse) then,
+  ) = _$RegisterResponseCopyWithImpl<$Res, RegisterResponse>;
+  @useResult
+  $Res call({
+    @JsonKey(name: "success") bool success,
+    @JsonKey(name: "message") String message,
+  });
 }
+
 /// @nodoc
-class _$RegisterResponseCopyWithImpl<$Res>
+class _$RegisterResponseCopyWithImpl<$Res, $Val extends RegisterResponse>
     implements $RegisterResponseCopyWith<$Res> {
-  _$RegisterResponseCopyWithImpl(this._self, this._then);
+  _$RegisterResponseCopyWithImpl(this._value, this._then);
 
-  final RegisterResponse _self;
-  final $Res Function(RegisterResponse) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of RegisterResponse
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? success = null,Object? message = null,}) {
-  return _then(_self.copyWith(
-success: null == success ? _self.success : success // ignore: cast_nullable_to_non_nullable
-as bool,message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
+  /// Create a copy of RegisterResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? success = null, Object? message = null}) {
+    return _then(
+      _value.copyWith(
+            success:
+                null == success
+                    ? _value.success
+                    : success // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            message:
+                null == message
+                    ? _value.message
+                    : message // ignore: cast_nullable_to_non_nullable
+                        as String,
+          )
+          as $Val,
+    );
+  }
 }
 
+/// @nodoc
+abstract class _$$RegisterResponseImplCopyWith<$Res>
+    implements $RegisterResponseCopyWith<$Res> {
+  factory _$$RegisterResponseImplCopyWith(
+    _$RegisterResponseImpl value,
+    $Res Function(_$RegisterResponseImpl) then,
+  ) = __$$RegisterResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    @JsonKey(name: "success") bool success,
+    @JsonKey(name: "message") String message,
+  });
 }
 
+/// @nodoc
+class __$$RegisterResponseImplCopyWithImpl<$Res>
+    extends _$RegisterResponseCopyWithImpl<$Res, _$RegisterResponseImpl>
+    implements _$$RegisterResponseImplCopyWith<$Res> {
+  __$$RegisterResponseImplCopyWithImpl(
+    _$RegisterResponseImpl _value,
+    $Res Function(_$RegisterResponseImpl) _then,
+  ) : super(_value, _then);
+
+  /// Create a copy of RegisterResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? success = null, Object? message = null}) {
+    return _then(
+      _$RegisterResponseImpl(
+        success:
+            null == success
+                ? _value.success
+                : success // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        message:
+            null == message
+                ? _value.message
+                : message // ignore: cast_nullable_to_non_nullable
+                    as String,
+      ),
+    );
+  }
+}
 
 /// @nodoc
 @JsonSerializable()
+class _$RegisterResponseImpl implements _RegisterResponse {
+  const _$RegisterResponseImpl({
+    @JsonKey(name: "success") required this.success,
+    @JsonKey(name: "message") required this.message,
+  });
 
-class _RegisterResponse implements RegisterResponse {
-  const _RegisterResponse({@JsonKey(name: "success") required this.success, @JsonKey(name: "message") required this.message});
-  factory _RegisterResponse.fromJson(Map<String, dynamic> json) => _$RegisterResponseFromJson(json);
+  factory _$RegisterResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RegisterResponseImplFromJson(json);
 
-@override@JsonKey(name: "success") final  bool success;
-@override@JsonKey(name: "message") final  String message;
+  @override
+  @JsonKey(name: "success")
+  final bool success;
+  @override
+  @JsonKey(name: "message")
+  final String message;
 
-/// Create a copy of RegisterResponse
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$RegisterResponseCopyWith<_RegisterResponse> get copyWith => __$RegisterResponseCopyWithImpl<_RegisterResponse>(this, _$identity);
+  @override
+  String toString() {
+    return 'RegisterResponse(success: $success, message: $message)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$RegisterResponseToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RegisterResponseImpl &&
+            (identical(other.success, success) || other.success == success) &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, success, message);
+
+  /// Create a copy of RegisterResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RegisterResponseImplCopyWith<_$RegisterResponseImpl> get copyWith =>
+      __$$RegisterResponseImplCopyWithImpl<_$RegisterResponseImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$RegisterResponseImplToJson(this);
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RegisterResponse&&(identical(other.success, success) || other.success == success)&&(identical(other.message, message) || other.message == message));
+abstract class _RegisterResponse implements RegisterResponse {
+  const factory _RegisterResponse({
+    @JsonKey(name: "success") required final bool success,
+    @JsonKey(name: "message") required final String message,
+  }) = _$RegisterResponseImpl;
+
+  factory _RegisterResponse.fromJson(Map<String, dynamic> json) =
+      _$RegisterResponseImpl.fromJson;
+
+  @override
+  @JsonKey(name: "success")
+  bool get success;
+  @override
+  @JsonKey(name: "message")
+  String get message;
+
+  /// Create a copy of RegisterResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RegisterResponseImplCopyWith<_$RegisterResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,success,message);
-
-@override
-String toString() {
-  return 'RegisterResponse(success: $success, message: $message)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$RegisterResponseCopyWith<$Res> implements $RegisterResponseCopyWith<$Res> {
-  factory _$RegisterResponseCopyWith(_RegisterResponse value, $Res Function(_RegisterResponse) _then) = __$RegisterResponseCopyWithImpl;
-@override @useResult
-$Res call({
-@JsonKey(name: "success") bool success,@JsonKey(name: "message") String message
-});
-
-
-
-
-}
-/// @nodoc
-class __$RegisterResponseCopyWithImpl<$Res>
-    implements _$RegisterResponseCopyWith<$Res> {
-  __$RegisterResponseCopyWithImpl(this._self, this._then);
-
-  final _RegisterResponse _self;
-  final $Res Function(_RegisterResponse) _then;
-
-/// Create a copy of RegisterResponse
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? success = null,Object? message = null,}) {
-  return _then(_RegisterResponse(
-success: null == success ? _self.success : success // ignore: cast_nullable_to_non_nullable
-as bool,message: null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
-as String,
-  ));
-}
-
-
-}
-
-// dart format on

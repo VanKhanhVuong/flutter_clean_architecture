@@ -4,7 +4,7 @@ part 'register_request.freezed.dart';
 part 'register_request.g.dart';
 
 @freezed
-abstract class RegisterRequest with _$RegisterRequest {
+class RegisterRequest with _$RegisterRequest {
   const factory RegisterRequest({
     @JsonKey(name: "name") required String name,
     @JsonKey(name: "email") required String email,
