@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fluttercleanarchitecture/features/login/presentation/ui/widget/login_form.dart';
 import 'package:fluttercleanarchitecture/shared/styled_text.dart';
-import 'package:go_router/go_router.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -19,19 +19,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         backgroundColor: Colors.blue[500],
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            StyledBodyText('Login Screen'),
-            IconButton.filled(
-              onPressed: () {
-                context.push('/signup');
-              },
-              icon: const Icon(Icons.login_outlined),
-            ),
-          ],
-        ),
-      ),
+      body: const LoginForm(),
     );
   }
 }
