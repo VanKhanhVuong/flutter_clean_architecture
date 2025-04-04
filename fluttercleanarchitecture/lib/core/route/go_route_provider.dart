@@ -3,6 +3,7 @@ import 'package:fluttercleanarchitecture/core/provider/auth_state_provider.dart'
 import 'package:fluttercleanarchitecture/core/route/route_name.dart';
 import 'package:fluttercleanarchitecture/features/home/presentation/ui/home_screen.dart';
 import 'package:fluttercleanarchitecture/features/login/presentation/ui/login_screen.dart';
+import 'package:fluttercleanarchitecture/features/settings/presentation/ui/settings_screen.dart';
 import 'package:fluttercleanarchitecture/features/signup/presentation/ui/signup_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -45,11 +46,11 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         name: homeRoute,
         builder: (context, state) => const HomeScreen(),
         routes: [
-          // GoRoute(
-          //   path: 'setting',
-          //   name: settingRoute,
-          //   // builder: (context, state) => const SettingScreen(),
-          // ),
+          GoRoute(
+            path: 'setting',
+            name: settingRoute,
+            builder: (context, state) => const SettingScreen(),
+          ),
         ],
       ),
     ],

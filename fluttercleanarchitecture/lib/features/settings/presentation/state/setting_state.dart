@@ -7,5 +7,7 @@ class SettingState with _$SettingState {
   factory SettingState({
     @Default(false) bool isDarkMode,
     @Default(false) bool isLoading,
+    bool? isSuccess,
+    String? errorMessage,
   }) = _SettingState;
 }

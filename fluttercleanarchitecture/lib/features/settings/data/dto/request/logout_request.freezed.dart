@@ -21,16 +21,8 @@ LogoutRequest _$LogoutRequestFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LogoutRequest {
-  String get token => throw _privateConstructorUsedError;
-
   /// Serializes this LogoutRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of LogoutRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $LogoutRequestCopyWith<LogoutRequest> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -39,8 +31,6 @@ abstract class $LogoutRequestCopyWith<$Res> {
     LogoutRequest value,
     $Res Function(LogoutRequest) then,
   ) = _$LogoutRequestCopyWithImpl<$Res, LogoutRequest>;
-  @useResult
-  $Res call({String token});
 }
 
 /// @nodoc
@@ -55,32 +45,14 @@ class _$LogoutRequestCopyWithImpl<$Res, $Val extends LogoutRequest>
 
   /// Create a copy of LogoutRequest
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? token = null}) {
-    return _then(
-      _value.copyWith(
-            token:
-                null == token
-                    ? _value.token
-                    : token // ignore: cast_nullable_to_non_nullable
-                        as String,
-          )
-          as $Val,
-    );
-  }
 }
 
 /// @nodoc
-abstract class _$$LogoutRequestImplCopyWith<$Res>
-    implements $LogoutRequestCopyWith<$Res> {
+abstract class _$$LogoutRequestImplCopyWith<$Res> {
   factory _$$LogoutRequestImplCopyWith(
     _$LogoutRequestImpl value,
     $Res Function(_$LogoutRequestImpl) then,
   ) = __$$LogoutRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String token});
 }
 
 /// @nodoc
@@ -94,56 +66,30 @@ class __$$LogoutRequestImplCopyWithImpl<$Res>
 
   /// Create a copy of LogoutRequest
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? token = null}) {
-    return _then(
-      _$LogoutRequestImpl(
-        token:
-            null == token
-                ? _value.token
-                : token // ignore: cast_nullable_to_non_nullable
-                    as String,
-      ),
-    );
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$LogoutRequestImpl implements _LogoutRequest {
-  const _$LogoutRequestImpl({required this.token});
+  const _$LogoutRequestImpl();
 
   factory _$LogoutRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$LogoutRequestImplFromJson(json);
 
   @override
-  final String token;
-
-  @override
   String toString() {
-    return 'LogoutRequest(token: $token)';
+    return 'LogoutRequest()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LogoutRequestImpl &&
-            (identical(other.token, token) || other.token == token));
+        (other.runtimeType == runtimeType && other is _$LogoutRequestImpl);
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, token);
-
-  /// Create a copy of LogoutRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LogoutRequestImplCopyWith<_$LogoutRequestImpl> get copyWith =>
-      __$$LogoutRequestImplCopyWithImpl<_$LogoutRequestImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   Map<String, dynamic> toJson() {
@@ -152,19 +98,8 @@ class _$LogoutRequestImpl implements _LogoutRequest {
 }
 
 abstract class _LogoutRequest implements LogoutRequest {
-  const factory _LogoutRequest({required final String token}) =
-      _$LogoutRequestImpl;
+  const factory _LogoutRequest() = _$LogoutRequestImpl;
 
   factory _LogoutRequest.fromJson(Map<String, dynamic> json) =
       _$LogoutRequestImpl.fromJson;
-
-  @override
-  String get token;
-
-  /// Create a copy of LogoutRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LogoutRequestImplCopyWith<_$LogoutRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }

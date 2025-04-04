@@ -19,6 +19,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SettingState {
   bool get isDarkMode => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  bool? get isSuccess => throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
 
   /// Create a copy of SettingState
   /// with the given fields replaced by the non-null parameter values.
@@ -34,7 +36,12 @@ abstract class $SettingStateCopyWith<$Res> {
     $Res Function(SettingState) then,
   ) = _$SettingStateCopyWithImpl<$Res, SettingState>;
   @useResult
-  $Res call({bool isDarkMode, bool isLoading});
+  $Res call({
+    bool isDarkMode,
+    bool isLoading,
+    bool? isSuccess,
+    String? errorMessage,
+  });
 }
 
 /// @nodoc
@@ -51,7 +58,12 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? isDarkMode = null, Object? isLoading = null}) {
+  $Res call({
+    Object? isDarkMode = null,
+    Object? isLoading = null,
+    Object? isSuccess = freezed,
+    Object? errorMessage = freezed,
+  }) {
     return _then(
       _value.copyWith(
             isDarkMode:
@@ -64,6 +76,16 @@ class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
                     ? _value.isLoading
                     : isLoading // ignore: cast_nullable_to_non_nullable
                         as bool,
+            isSuccess:
+                freezed == isSuccess
+                    ? _value.isSuccess
+                    : isSuccess // ignore: cast_nullable_to_non_nullable
+                        as bool?,
+            errorMessage:
+                freezed == errorMessage
+                    ? _value.errorMessage
+                    : errorMessage // ignore: cast_nullable_to_non_nullable
+                        as String?,
           )
           as $Val,
     );
@@ -79,7 +101,12 @@ abstract class _$$SettingStateImplCopyWith<$Res>
   ) = __$$SettingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isDarkMode, bool isLoading});
+  $Res call({
+    bool isDarkMode,
+    bool isLoading,
+    bool? isSuccess,
+    String? errorMessage,
+  });
 }
 
 /// @nodoc
@@ -95,7 +122,12 @@ class __$$SettingStateImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? isDarkMode = null, Object? isLoading = null}) {
+  $Res call({
+    Object? isDarkMode = null,
+    Object? isLoading = null,
+    Object? isSuccess = freezed,
+    Object? errorMessage = freezed,
+  }) {
     return _then(
       _$SettingStateImpl(
         isDarkMode:
@@ -108,6 +140,16 @@ class __$$SettingStateImplCopyWithImpl<$Res>
                 ? _value.isLoading
                 : isLoading // ignore: cast_nullable_to_non_nullable
                     as bool,
+        isSuccess:
+            freezed == isSuccess
+                ? _value.isSuccess
+                : isSuccess // ignore: cast_nullable_to_non_nullable
+                    as bool?,
+        errorMessage:
+            freezed == errorMessage
+                ? _value.errorMessage
+                : errorMessage // ignore: cast_nullable_to_non_nullable
+                    as String?,
       ),
     );
   }
@@ -116,7 +158,12 @@ class __$$SettingStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SettingStateImpl implements _SettingState {
-  _$SettingStateImpl({this.isDarkMode = false, this.isLoading = false});
+  _$SettingStateImpl({
+    this.isDarkMode = false,
+    this.isLoading = false,
+    this.isSuccess,
+    this.errorMessage,
+  });
 
   @override
   @JsonKey()
@@ -124,10 +171,14 @@ class _$SettingStateImpl implements _SettingState {
   @override
   @JsonKey()
   final bool isLoading;
+  @override
+  final bool? isSuccess;
+  @override
+  final String? errorMessage;
 
   @override
   String toString() {
-    return 'SettingState(isDarkMode: $isDarkMode, isLoading: $isLoading)';
+    return 'SettingState(isDarkMode: $isDarkMode, isLoading: $isLoading, isSuccess: $isSuccess, errorMessage: $errorMessage)';
   }
 
   @override
@@ -138,11 +189,16 @@ class _$SettingStateImpl implements _SettingState {
             (identical(other.isDarkMode, isDarkMode) ||
                 other.isDarkMode == isDarkMode) &&
             (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading));
+                other.isLoading == isLoading) &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isDarkMode, isLoading);
+  int get hashCode =>
+      Object.hash(runtimeType, isDarkMode, isLoading, isSuccess, errorMessage);
 
   /// Create a copy of SettingState
   /// with the given fields replaced by the non-null parameter values.
@@ -154,13 +210,21 @@ class _$SettingStateImpl implements _SettingState {
 }
 
 abstract class _SettingState implements SettingState {
-  factory _SettingState({final bool isDarkMode, final bool isLoading}) =
-      _$SettingStateImpl;
+  factory _SettingState({
+    final bool isDarkMode,
+    final bool isLoading,
+    final bool? isSuccess,
+    final String? errorMessage,
+  }) = _$SettingStateImpl;
 
   @override
   bool get isDarkMode;
   @override
   bool get isLoading;
+  @override
+  bool? get isSuccess;
+  @override
+  String? get errorMessage;
 
   /// Create a copy of SettingState
   /// with the given fields replaced by the non-null parameter values.

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/extension/string_hardcoded.dart';
-import 'package:fluttercleanarchitecture/common/style/dimens.dart'
-    show kLarge, kMedium, kSmall;
+import 'package:fluttercleanarchitecture/common/style/dimens.dart';
+import 'package:fluttercleanarchitecture/core/utils/validators.dart';
 import 'package:fluttercleanarchitecture/features/login/presentation/controller/login_controller.dart';
 import 'package:fluttercleanarchitecture/features/login/presentation/ui/widget/dont_have_account.dart';
 import 'package:fluttercleanarchitecture/features/login/presentation/ui/widget/forgot_password.dart';
 import 'package:fluttercleanarchitecture/features/login/presentation/ui/widget/login_button.dart';
 import 'package:fluttercleanarchitecture/features/login/presentation/ui/widget/login_with.dart';
+import 'package:fluttercleanarchitecture/shared/styled_textfield.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginForm extends ConsumerStatefulWidget {
@@ -44,59 +45,34 @@ class _LoginFormState extends ConsumerState<LoginForm> {
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextFormField(
-                controller: _emailController,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  labelText: 'Email'.hardcoded,
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(kSmall)),
-                  ),
-                  prefix: const Icon(Icons.email),
+        child: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                StyledTextField(
+                  controller: _emailController,
+                  label: 'Email'.hardcoded,
+                  validator: Validators.validateEmail,
+                  keyboardType: TextInputType.emailAddress,
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your email'.hardcoded;
-                  } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                    return 'Please enter a valid email'.hardcoded;
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: kMedium),
-              TextFormField(
-                controller: _passwordController,
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Password'.hardcoded,
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(kSmall)),
-                  ),
-                  prefix: const Icon(Icons.lock),
+                const SizedBox(height: kMedium),
+                StyledTextField(
+                  controller: _passwordController,
+                  label: 'Password'.hardcoded,
+                  validator: Validators.validatePassword,
+                  obscureText: true,
                 ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your password'.hardcoded;
-                  } else if (value.length < 8) {
-                    return 'Password must be at least 8 characters long'
-                        .hardcoded;
-                  }
-                  return null;
-                },
-              ),
-              const ForgotPassword(),
-              const SizedBox(height: kSmall),
-              LoginButton(onPressed: _login),
-              const SizedBox(height: kLarge),
-              const LoginWith(),
-              const SizedBox(height: kLarge),
-              const DontHaveAccount(),
-            ],
+                const ForgotPassword(),
+                const SizedBox(height: kSmall),
+                LoginButton(onPressed: _login),
+                const SizedBox(height: kLarge),
+                const LoginWith(),
+                const SizedBox(height: kLarge),
+                const DontHaveAccount(),
+              ],
+            ),
           ),
         ),
       ),

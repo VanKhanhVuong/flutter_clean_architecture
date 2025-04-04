@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttercleanarchitecture/common/style/dimens.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class StyledTextField extends StatefulWidget {
@@ -20,6 +21,7 @@ class StyledTextField extends StatefulWidget {
   final String? Function(String?)? validator;
 
   @override
+  // ignore: library_private_types_in_public_api
   _StyledTextFieldState createState() => _StyledTextFieldState();
 }
 
@@ -43,7 +45,7 @@ class _StyledTextFieldState extends State<StyledTextField> {
         labelText: widget.label,
         labelStyle: GoogleFonts.poppins(
           textStyle: const TextStyle(
-            fontSize: 14,
+            fontSize: kMediumSmall,
             fontWeight: FontWeight.w500,
             color: Colors.blueGrey,
           ),
@@ -51,6 +53,8 @@ class _StyledTextFieldState extends State<StyledTextField> {
         suffixIcon:
             widget.obscureText
                 ? IconButton(
+                  color: Colors.blueGrey,
+                  iconSize: kMedium,
                   icon: Icon(
                     _isObscured ? Icons.visibility_off : Icons.visibility,
                   ),

@@ -18,11 +18,11 @@ class _LogoutApi implements LogoutApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<LogoutResponse> logout(LogoutRequest body) async {
+  Future<LogoutResponse> logout() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = body;
+    const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<LogoutResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(

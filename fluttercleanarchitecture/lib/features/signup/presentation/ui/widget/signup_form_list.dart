@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/extension/string_hardcoded.dart';
 import 'package:fluttercleanarchitecture/common/style/dimens.dart';
+import 'package:fluttercleanarchitecture/core/utils/validators.dart';
 import 'package:fluttercleanarchitecture/features/signup/presentation/controller/register_controller.dart';
 import 'package:fluttercleanarchitecture/features/signup/presentation/ui/widget/already_have_account.dart';
 import 'package:fluttercleanarchitecture/features/signup/presentation/ui/widget/signup_button.dart';
+import 'package:fluttercleanarchitecture/shared/styled_textfield.dart';
 import 'package:go_router/go_router.dart';
 
 class SignUpFormList extends ConsumerStatefulWidget {
@@ -50,96 +52,49 @@ class _SignUpFormListState extends ConsumerState<SignUpFormList> {
 
     return Padding(
       padding: const EdgeInsets.all(kMedium),
-      child: Form(
-        key: _formKey,
-        child: ListView(
-          children: [
-            TextFormField(
-              controller: _nameController,
-              keyboardType: TextInputType.name,
-              decoration: InputDecoration(
-                labelText: 'Name'.hardcoded,
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(kSmall)),
-                ),
-                prefix: const Icon(Icons.person),
+      child: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            children: [
+              StyledTextField(
+                controller: _nameController,
+                keyboardType: TextInputType.name,
+                validator: Validators.validateName,
+                label: 'Name'.hardcoded,
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your name'.hardcoded;
-                }
-                return null;
-              },
-            ),
-            const SizedBox(height: kMedium),
-            TextFormField(
-              controller: _emailController,
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                labelText: 'Email'.hardcoded,
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(kSmall)),
-                ),
-                prefix: const Icon(Icons.email),
+              const SizedBox(height: kMedium),
+              StyledTextField(
+                controller: _emailController,
+                label: 'Email'.hardcoded,
+                keyboardType: TextInputType.emailAddress,
+                validator: Validators.validateEmail,
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your email'.hardcoded;
-                } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                  return 'Please enter a valid email'.hardcoded;
-                }
-                return null;
-              },
-            ),
-            const SizedBox(height: kMedium),
-            TextFormField(
-              controller: _passwordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Password'.hardcoded,
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(kSmall)),
-                ),
-                prefix: const Icon(Icons.lock),
+              const SizedBox(height: kMedium),
+              StyledTextField(
+                controller: _passwordController,
+                label: 'Password'.hardcoded,
+                obscureText: true,
+                validator: Validators.validatePassword,
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your password'.hardcoded;
-                } else if (value.length < 8) {
-                  return 'Password must be at least 8 characters long'
-                      .hardcoded;
-                }
-                return null;
-              },
-            ),
-            const SizedBox(height: kMedium),
-            TextFormField(
-              controller: _confirmPasswordController,
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: 'Confirm Password'.hardcoded,
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(kSmall)),
-                ),
-                prefix: const Icon(Icons.lock),
+              const SizedBox(height: kMedium),
+              StyledTextField(
+                controller: _confirmPasswordController,
+                label: 'Confirm Password'.hardcoded,
+                obscureText: true,
+                validator: (value) {
+                  return Validators.validateRePassword(
+                    value,
+                    _passwordController.text,
+                  );
+                },
               ),
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your password'.hardcoded;
-                } else if (value.length < 8) {
-                  return 'Password must be at least 8 characters long'
-                      .hardcoded;
-                } else if (value != _passwordController.text) {
-                  return 'Passwords do not match'.hardcoded;
-                }
-                return null;
-              },
-            ),
-            const SizedBox(height: kExtraLarge),
-            SignUpButton(onPressed: _onSubmit),
-            const SizedBox(height: kExtraLarge),
-            AlreadyHaveAccount(onPressed: _navigateToLogin),
-          ],
+              const SizedBox(height: kExtraLarge),
+              SignUpButton(onPressed: _onSubmit),
+              const SizedBox(height: kExtraLarge),
+              AlreadyHaveAccount(onPressed: _navigateToLogin),
+            ],
+          ),
         ),
       ),
     );
@@ -205,7 +160,7 @@ class _SignUpFormListState extends ConsumerState<SignUpFormList> {
   }
 
   void _navigateToLogin() {
-    // context.go('/login');
+    context.go('/login');
   }
 
   void _onSubmit() {
