@@ -1,10 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/core/provider/auth_state_provider.dart';
 import 'package:fluttercleanarchitecture/core/route/route_name.dart';
+import 'package:fluttercleanarchitecture/features/auth/verify_account/presentation/ui/verify_account_screen.dart';
 import 'package:fluttercleanarchitecture/features/home/presentation/ui/home_screen.dart';
-import 'package:fluttercleanarchitecture/features/login/presentation/ui/login_screen.dart';
+import 'package:fluttercleanarchitecture/features/auth/login/presentation/ui/login_screen.dart';
 import 'package:fluttercleanarchitecture/features/settings/presentation/ui/settings_screen.dart';
-import 'package:fluttercleanarchitecture/features/signup/presentation/ui/signup_screen.dart';
+import 'package:fluttercleanarchitecture/features/auth/signup/presentation/ui/signup_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final goRouterProvider = Provider<GoRouter>((ref) {
@@ -40,6 +41,19 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         path: '/signup',
         name: signUpRoute,
         builder: (context, state) => const SignupScreen(),
+        routes: [
+          GoRoute(
+            path: 'verify-account',
+            name: verifyAccountRoute,
+            builder: (context, state) {
+              // Lấy query parameter 'email'
+              final email = state.uri.queryParameters['email'] ?? '';
+              return VerifyAccountScreen(
+                email: email,
+              ); // Truyền email vào VerifyAccountScreen
+            },
+          ),
+        ],
       ),
       GoRoute(
         path: '/home',
