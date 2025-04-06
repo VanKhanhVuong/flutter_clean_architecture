@@ -3,4 +3,5 @@ const String signUpRoute = '/signup';
 const String verifyAccountRoute = '/verify-account';
 const String homeRoute = 'home';
 const String settingRoute = 'setting';
-const String forgotPasswordRoute = 'forgotPassword';
+const String forgotPasswordRoute = '/forgot-password';
+const String resetPasswordRoute = '/reset-password';

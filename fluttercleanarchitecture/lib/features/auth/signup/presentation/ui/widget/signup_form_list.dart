@@ -4,7 +4,7 @@ import 'package:fluttercleanarchitecture/common/extension/string_hardcoded.dart'
 import 'package:fluttercleanarchitecture/common/style/dimens.dart';
 import 'package:fluttercleanarchitecture/core/utils/validators.dart';
 import 'package:fluttercleanarchitecture/features/auth/signup/presentation/controller/register_controller.dart';
-// import 'package:fluttercleanarchitecture/features/auth/signup/presentation/ui/widget/already_have_account.dart';
+import 'package:fluttercleanarchitecture/features/auth/signup/presentation/ui/widget/already_have_account.dart';
 import 'package:fluttercleanarchitecture/features/auth/signup/presentation/ui/widget/signup_button.dart';
 import 'package:fluttercleanarchitecture/shared/styled_textfield.dart';
 import 'package:go_router/go_router.dart';
@@ -96,7 +96,7 @@ class _SignUpFormListState extends ConsumerState<SignUpFormList> {
                 const SizedBox(height: kExtraLarge),
                 SignUpButton(onPressed: _onSubmit),
                 const SizedBox(height: kExtraLarge),
-                // AlreadyHaveAccount(onPressed: _navigateToLogin),
+                AlreadyHaveAccount(onPressed: _navigateToLogin),
               ],
             ),
           ),
@@ -165,13 +165,13 @@ class _SignUpFormListState extends ConsumerState<SignUpFormList> {
     _confirmPasswordController.clear();
   }
 
-  // void _navigateToLogin() {
-  //   context.go('/login');
-  // }
+  void _navigateToLogin() {
+    context.go('/login');
+  }
 
   void _navigateToVerifyAccount() {
     // Lấy giá trị email từ controller và thêm vào query params
-    context.go('/signup/verify-account?email=${tempEmail}');
+    context.go('/signup/verify-account?email=$tempEmail');
   }
 
   void _onSubmit() {

@@ -14,7 +14,7 @@ class ForgotPassword extends ConsumerWidget {
         TextButton(
           onPressed: () {
             // Navigate to signup screen
-            context.push('/login/forgotPassword');
+            context.push('/forgot-password');
           },
           child: Text(
             "Forgot Password?".hardcoded,
