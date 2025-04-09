@@ -1,13 +1,13 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/core/provider/auth_state_provider.dart';
 import 'package:fluttercleanarchitecture/core/route/route_name.dart';
-import 'package:fluttercleanarchitecture/features/auth/forgot_account/presentation/ui/forgot_account_screen.dart';
-import 'package:fluttercleanarchitecture/features/auth/reset_password/presentation/ui/reset_password_screen.dart';
-import 'package:fluttercleanarchitecture/features/auth/verify_account/presentation/ui/verify_account_screen.dart';
+import 'package:fluttercleanarchitecture/features/auth/presentation/forgot_account/ui/forgot_account_screen.dart';
+import 'package:fluttercleanarchitecture/features/auth/presentation/reset_password/ui/reset_password_screen.dart';
+import 'package:fluttercleanarchitecture/features/auth/presentation/verify_account/ui/verify_account_screen.dart';
 import 'package:fluttercleanarchitecture/features/home/presentation/ui/home_screen.dart';
-import 'package:fluttercleanarchitecture/features/auth/login/presentation/ui/login_screen.dart';
+import 'package:fluttercleanarchitecture/features/auth/presentation/login/ui/login_screen.dart';
 import 'package:fluttercleanarchitecture/features/settings/presentation/ui/settings_screen.dart';
-import 'package:fluttercleanarchitecture/features/auth/signup/presentation/ui/signup_screen.dart';
+import 'package:fluttercleanarchitecture/features/auth/presentation/signup/ui/signup_screen.dart';
 import 'package:go_router/go_router.dart';
 
 final goRouterProvider = Provider<GoRouter>((ref) {

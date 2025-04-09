@@ -1,17 +1,17 @@
 import 'package:fluttercleanarchitecture/features/auth/domain/entities/user/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'refresh_token_response.freezed.dart';
-part 'refresh_token_response.g.dart';
+part 'login_response.freezed.dart';
+part 'login_response.g.dart';
 
 @freezed
-class RefreshTokenResponse with _$RefreshTokenResponse {
-  const factory RefreshTokenResponse({
+class LoginResponse with _$LoginResponse {
+  const factory LoginResponse({
     @JsonKey(name: "user") required User user,
     @JsonKey(name: "access_token") required String accessToken,
     @JsonKey(name: "token_type") required String tokenType,
-  }) = _RefreshTokenResponse;
+  }) = _LoginResponse;
 
-  factory RefreshTokenResponse.fromJson(Map<String, dynamic> json) =>
-      _$RefreshTokenResponseFromJson(json);
+  factory LoginResponse.fromJson(Map<String, dynamic> json) =>
+      _$LoginResponseFromJson(json);
 }
