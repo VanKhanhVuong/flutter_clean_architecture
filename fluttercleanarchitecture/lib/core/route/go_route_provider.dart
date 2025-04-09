@@ -4,6 +4,7 @@ import 'package:fluttercleanarchitecture/core/route/route_name.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/forgot_account/ui/forgot_account_screen.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/reset_password/ui/reset_password_screen.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/verify_account/ui/verify_account_screen.dart';
+import 'package:fluttercleanarchitecture/features/flashcard/presentation/ui/flashcard_screen.dart';
 import 'package:fluttercleanarchitecture/features/home/presentation/ui/home_screen.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/login/ui/login_screen.dart';
 import 'package:fluttercleanarchitecture/features/settings/presentation/ui/settings_screen.dart';
@@ -74,7 +75,13 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => const HomeScreen(),
         routes: [
           GoRoute(
-            path: 'setting',
+            path: '/flash-card',
+            name: flashCardRoute,
+            builder: (context, state) => const FlashcardScreen(),
+          ),
+
+          GoRoute(
+            path: '/setting',
             name: settingRoute,
             builder: (context, state) => const SettingScreen(),
           ),

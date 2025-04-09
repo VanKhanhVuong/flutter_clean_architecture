@@ -15,7 +15,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: StyledAppBarText('Home Screen')),
+      appBar: AppBar(
+        title: StyledAppBarText('Flashcard'.hardcoded),
+        backgroundColor: Colors.blue[500],
+        centerTitle: true,
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -26,6 +30,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 context.push('/home/setting');
               },
               child: Text('Setting'.hardcoded),
+            ),
+
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to setting screen
+                context.push('/home/flash-card');
+              },
+              child: Text('Flashcard'.hardcoded),
             ),
           ],
         ),
