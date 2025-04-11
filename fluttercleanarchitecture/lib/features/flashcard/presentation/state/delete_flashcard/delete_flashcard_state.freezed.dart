@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'flashcard_state.dart';
+part of 'delete_flashcard_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -16,45 +16,51 @@ final _privateConstructorUsedError = UnsupportedError(
 );
 
 /// @nodoc
-mixin _$FlashcardState {
+mixin _$DeleteFlashcardState {
   bool get isLoading => throw _privateConstructorUsedError;
   bool? get isSuccess => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
-  List<FlashcardResponse> get flashcards => throw _privateConstructorUsedError;
+  FlashcardItemResponse? get originalFlashcard =>
+      throw _privateConstructorUsedError;
 
-  /// Create a copy of FlashcardState
+  /// Create a copy of DeleteFlashcardState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $FlashcardStateCopyWith<FlashcardState> get copyWith =>
+  $DeleteFlashcardStateCopyWith<DeleteFlashcardState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FlashcardStateCopyWith<$Res> {
-  factory $FlashcardStateCopyWith(
-    FlashcardState value,
-    $Res Function(FlashcardState) then,
-  ) = _$FlashcardStateCopyWithImpl<$Res, FlashcardState>;
+abstract class $DeleteFlashcardStateCopyWith<$Res> {
+  factory $DeleteFlashcardStateCopyWith(
+    DeleteFlashcardState value,
+    $Res Function(DeleteFlashcardState) then,
+  ) = _$DeleteFlashcardStateCopyWithImpl<$Res, DeleteFlashcardState>;
   @useResult
   $Res call({
     bool isLoading,
     bool? isSuccess,
     String? errorMessage,
-    List<FlashcardResponse> flashcards,
+    FlashcardItemResponse? originalFlashcard,
   });
+
+  $FlashcardItemResponseCopyWith<$Res>? get originalFlashcard;
 }
 
 /// @nodoc
-class _$FlashcardStateCopyWithImpl<$Res, $Val extends FlashcardState>
-    implements $FlashcardStateCopyWith<$Res> {
-  _$FlashcardStateCopyWithImpl(this._value, this._then);
+class _$DeleteFlashcardStateCopyWithImpl<
+  $Res,
+  $Val extends DeleteFlashcardState
+>
+    implements $DeleteFlashcardStateCopyWith<$Res> {
+  _$DeleteFlashcardStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of FlashcardState
+  /// Create a copy of DeleteFlashcardState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -62,7 +68,7 @@ class _$FlashcardStateCopyWithImpl<$Res, $Val extends FlashcardState>
     Object? isLoading = null,
     Object? isSuccess = freezed,
     Object? errorMessage = freezed,
-    Object? flashcards = null,
+    Object? originalFlashcard = freezed,
   }) {
     return _then(
       _value.copyWith(
@@ -81,44 +87,63 @@ class _$FlashcardStateCopyWithImpl<$Res, $Val extends FlashcardState>
                     ? _value.errorMessage
                     : errorMessage // ignore: cast_nullable_to_non_nullable
                         as String?,
-            flashcards:
-                null == flashcards
-                    ? _value.flashcards
-                    : flashcards // ignore: cast_nullable_to_non_nullable
-                        as List<FlashcardResponse>,
+            originalFlashcard:
+                freezed == originalFlashcard
+                    ? _value.originalFlashcard
+                    : originalFlashcard // ignore: cast_nullable_to_non_nullable
+                        as FlashcardItemResponse?,
           )
           as $Val,
     );
   }
+
+  /// Create a copy of DeleteFlashcardState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $FlashcardItemResponseCopyWith<$Res>? get originalFlashcard {
+    if (_value.originalFlashcard == null) {
+      return null;
+    }
+
+    return $FlashcardItemResponseCopyWith<$Res>(_value.originalFlashcard!, (
+      value,
+    ) {
+      return _then(_value.copyWith(originalFlashcard: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$FlashcardStateImplCopyWith<$Res>
-    implements $FlashcardStateCopyWith<$Res> {
-  factory _$$FlashcardStateImplCopyWith(
-    _$FlashcardStateImpl value,
-    $Res Function(_$FlashcardStateImpl) then,
-  ) = __$$FlashcardStateImplCopyWithImpl<$Res>;
+abstract class _$$DeleteFlashcardStateImplCopyWith<$Res>
+    implements $DeleteFlashcardStateCopyWith<$Res> {
+  factory _$$DeleteFlashcardStateImplCopyWith(
+    _$DeleteFlashcardStateImpl value,
+    $Res Function(_$DeleteFlashcardStateImpl) then,
+  ) = __$$DeleteFlashcardStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({
     bool isLoading,
     bool? isSuccess,
     String? errorMessage,
-    List<FlashcardResponse> flashcards,
+    FlashcardItemResponse? originalFlashcard,
   });
+
+  @override
+  $FlashcardItemResponseCopyWith<$Res>? get originalFlashcard;
 }
 
 /// @nodoc
-class __$$FlashcardStateImplCopyWithImpl<$Res>
-    extends _$FlashcardStateCopyWithImpl<$Res, _$FlashcardStateImpl>
-    implements _$$FlashcardStateImplCopyWith<$Res> {
-  __$$FlashcardStateImplCopyWithImpl(
-    _$FlashcardStateImpl _value,
-    $Res Function(_$FlashcardStateImpl) _then,
+class __$$DeleteFlashcardStateImplCopyWithImpl<$Res>
+    extends _$DeleteFlashcardStateCopyWithImpl<$Res, _$DeleteFlashcardStateImpl>
+    implements _$$DeleteFlashcardStateImplCopyWith<$Res> {
+  __$$DeleteFlashcardStateImplCopyWithImpl(
+    _$DeleteFlashcardStateImpl _value,
+    $Res Function(_$DeleteFlashcardStateImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of FlashcardState
+  /// Create a copy of DeleteFlashcardState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -126,10 +151,10 @@ class __$$FlashcardStateImplCopyWithImpl<$Res>
     Object? isLoading = null,
     Object? isSuccess = freezed,
     Object? errorMessage = freezed,
-    Object? flashcards = null,
+    Object? originalFlashcard = freezed,
   }) {
     return _then(
-      _$FlashcardStateImpl(
+      _$DeleteFlashcardStateImpl(
         isLoading:
             null == isLoading
                 ? _value.isLoading
@@ -145,11 +170,11 @@ class __$$FlashcardStateImplCopyWithImpl<$Res>
                 ? _value.errorMessage
                 : errorMessage // ignore: cast_nullable_to_non_nullable
                     as String?,
-        flashcards:
-            null == flashcards
-                ? _value._flashcards
-                : flashcards // ignore: cast_nullable_to_non_nullable
-                    as List<FlashcardResponse>,
+        originalFlashcard:
+            freezed == originalFlashcard
+                ? _value.originalFlashcard
+                : originalFlashcard // ignore: cast_nullable_to_non_nullable
+                    as FlashcardItemResponse?,
       ),
     );
   }
@@ -157,13 +182,13 @@ class __$$FlashcardStateImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FlashcardStateImpl implements _FlashcardState {
-  _$FlashcardStateImpl({
+class _$DeleteFlashcardStateImpl implements _DeleteFlashcardState {
+  _$DeleteFlashcardStateImpl({
     this.isLoading = false,
     this.isSuccess,
     this.errorMessage,
-    final List<FlashcardResponse> flashcards = const [],
-  }) : _flashcards = flashcards;
+    this.originalFlashcard,
+  });
 
   @override
   @JsonKey()
@@ -172,35 +197,27 @@ class _$FlashcardStateImpl implements _FlashcardState {
   final bool? isSuccess;
   @override
   final String? errorMessage;
-  final List<FlashcardResponse> _flashcards;
   @override
-  @JsonKey()
-  List<FlashcardResponse> get flashcards {
-    if (_flashcards is EqualUnmodifiableListView) return _flashcards;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_flashcards);
-  }
+  final FlashcardItemResponse? originalFlashcard;
 
   @override
   String toString() {
-    return 'FlashcardState(isLoading: $isLoading, isSuccess: $isSuccess, errorMessage: $errorMessage, flashcards: $flashcards)';
+    return 'DeleteFlashcardState(isLoading: $isLoading, isSuccess: $isSuccess, errorMessage: $errorMessage, originalFlashcard: $originalFlashcard)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FlashcardStateImpl &&
+            other is _$DeleteFlashcardStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.isSuccess, isSuccess) ||
                 other.isSuccess == isSuccess) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
-            const DeepCollectionEquality().equals(
-              other._flashcards,
-              _flashcards,
-            ));
+            (identical(other.originalFlashcard, originalFlashcard) ||
+                other.originalFlashcard == originalFlashcard));
   }
 
   @override
@@ -209,28 +226,29 @@ class _$FlashcardStateImpl implements _FlashcardState {
     isLoading,
     isSuccess,
     errorMessage,
-    const DeepCollectionEquality().hash(_flashcards),
+    originalFlashcard,
   );
 
-  /// Create a copy of FlashcardState
+  /// Create a copy of DeleteFlashcardState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FlashcardStateImplCopyWith<_$FlashcardStateImpl> get copyWith =>
-      __$$FlashcardStateImplCopyWithImpl<_$FlashcardStateImpl>(
+  _$$DeleteFlashcardStateImplCopyWith<_$DeleteFlashcardStateImpl>
+  get copyWith =>
+      __$$DeleteFlashcardStateImplCopyWithImpl<_$DeleteFlashcardStateImpl>(
         this,
         _$identity,
       );
 }
 
-abstract class _FlashcardState implements FlashcardState {
-  factory _FlashcardState({
+abstract class _DeleteFlashcardState implements DeleteFlashcardState {
+  factory _DeleteFlashcardState({
     final bool isLoading,
     final bool? isSuccess,
     final String? errorMessage,
-    final List<FlashcardResponse> flashcards,
-  }) = _$FlashcardStateImpl;
+    final FlashcardItemResponse? originalFlashcard,
+  }) = _$DeleteFlashcardStateImpl;
 
   @override
   bool get isLoading;
@@ -239,12 +257,12 @@ abstract class _FlashcardState implements FlashcardState {
   @override
   String? get errorMessage;
   @override
-  List<FlashcardResponse> get flashcards;
+  FlashcardItemResponse? get originalFlashcard;
 
-  /// Create a copy of FlashcardState
+  /// Create a copy of DeleteFlashcardState
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FlashcardStateImplCopyWith<_$FlashcardStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeleteFlashcardStateImplCopyWith<_$DeleteFlashcardStateImpl>
+  get copyWith => throw _privateConstructorUsedError;
 }

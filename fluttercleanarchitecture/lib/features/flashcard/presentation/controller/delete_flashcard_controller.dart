@@ -1,19 +1,21 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/application/flashcards/flashcards_service.dart';
-import 'package:fluttercleanarchitecture/features/flashcard/presentation/state/flashcard_state.dart';
+import 'package:fluttercleanarchitecture/features/flashcard/data/dto/request/delete_flashcard_request/delete_flashcard_request.dart';
+import 'package:fluttercleanarchitecture/features/flashcard/presentation/state/delete_flashcard/delete_flashcard_state.dart';
 
-final flashcardControllerProvider =
-    AutoDisposeNotifierProvider<FlashcardController, FlashcardState>(
-      FlashcardController.new,
-    );
+final deleteFlashcardControllerProvider = AutoDisposeNotifierProvider<
+  DeleteFlashcardController,
+  DeleteFlashcardState
+>(DeleteFlashcardController.new);
 
-class FlashcardController extends AutoDisposeNotifier<FlashcardState> {
+class DeleteFlashcardController
+    extends AutoDisposeNotifier<DeleteFlashcardState> {
   @override
-  FlashcardState build() {
-    return FlashcardState();
+  DeleteFlashcardState build() {
+    return DeleteFlashcardState();
   }
 
-  Future<void> getFlashcards() async {
+  Future<void> deleteFlashcard(int id) async {
     try {
       state = state.copyWith(
         isLoading: true,
@@ -21,15 +23,18 @@ class FlashcardController extends AutoDisposeNotifier<FlashcardState> {
         errorMessage: null,
       );
 
-      final result =
-          await ref.read(flashcardsServiceProvider).getAllFlashcards();
+      final formData = DeleteFlashcardRequest(flashcardId: id);
+
+      final result = await ref
+          .read(flashcardsServiceProvider)
+          .deleteFlashcard(formData); // Gọi hàm delte
+
       result.when(
         (success) {
           state = state.copyWith(
             isLoading: false,
             isSuccess: true,
             errorMessage: null,
-            flashcards: success.flashcards,
           );
         },
         (failure) {

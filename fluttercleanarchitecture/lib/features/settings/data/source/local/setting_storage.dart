@@ -18,6 +18,6 @@ class SetingStorage implements ISettingStorage {
   @override
   Future<void> clearToken() async {
     await _secureStorage.delete(accessTokenKey);
-    await _secureStorage.delete(emailKey);
+    await _secureStorage.delete(refreshTokenKey);
   }
 }

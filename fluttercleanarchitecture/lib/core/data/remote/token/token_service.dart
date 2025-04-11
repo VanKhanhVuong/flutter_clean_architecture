@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:fluttercleanarchitecture/common/dtos/refresh_token_response.dart';
+import 'package:fluttercleanarchitecture/common/dtos/refresh_token_response/refresh_token_response.dart';
 import 'package:fluttercleanarchitecture/common/http_status/status_code.dart';
 import 'package:fluttercleanarchitecture/core/data/local/secure_storage/isecure_storage.dart';
 import 'package:fluttercleanarchitecture/core/data/local/secure_storage/secure_storage.dart';
@@ -22,7 +22,7 @@ class TokenService implements ITokenService {
   Future<void> clearTokens() {
     return Future.wait([
       _secureStorage.delete(accessTokenKey),
-      _secureStorage.delete(emailKey),
+      _secureStorage.delete(refreshTokenKey),
     ]);
   }
 
@@ -30,17 +30,10 @@ class TokenService implements ITokenService {
   Future<String?> getAccessToken() => _secureStorage.read(accessTokenKey);
 
   @override
-  Future<String?> getEmail() => _secureStorage.read(emailKey);
-
-  @override
-  Future<RefreshTokenResponse> refreshToken(
-    String? token,
-    String? email,
-  ) async {
+  Future<RefreshTokenResponse> refreshToken(String? refreshToken) async {
     final response = await _dio.post<Map<String, dynamic>>(
       '/api/refresh',
-      queryParameters: {"email": email},
-      options: Options(headers: {'Authorization': 'Bearer $token'}),
+      queryParameters: {"refresh_token": refreshToken},
     );
     if (response.statusCode == success) {
       return RefreshTokenResponse.fromJson(response.data ?? {});
@@ -53,10 +46,13 @@ class TokenService implements ITokenService {
   }
 
   @override
-  Future<void> setAccessTokenEmail(String token, String email) {
+  Future<String?> getRefreshToken() => _secureStorage.read(refreshTokenKey);
+
+  @override
+  Future<void> setAccessRefreshToken(String accessToken, String refreshToken) {
     return Future.wait([
-      _secureStorage.write(accessTokenKey, token),
-      _secureStorage.write(emailKey, email),
+      _secureStorage.write(accessTokenKey, accessToken),
+      _secureStorage.write(refreshTokenKey, refreshToken),
     ]);
   }
 }

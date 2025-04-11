@@ -1,6 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/exception/failure.dart';
+import 'package:fluttercleanarchitecture/core/data/local/secure_storage/isecure_storage.dart';
+import 'package:fluttercleanarchitecture/core/data/local/secure_storage/secure_storage.dart';
 import 'package:fluttercleanarchitecture/features/settings/application/ilogout_service.dart';
+import 'package:fluttercleanarchitecture/features/settings/data/dto/request/logout_request.dart';
 // import 'package:fluttercleanarchitecture/features/settings/data/dto/request/logout_request.dart';
 import 'package:fluttercleanarchitecture/features/settings/data/dto/response/logout_response.dart';
 import 'package:fluttercleanarchitecture/features/settings/data/repository/ilogout_repository.dart';
@@ -11,20 +14,31 @@ import 'package:multiple_result/multiple_result.dart';
 
 final logoutServiceProvider = Provider<ILogoutService>((ref) {
   final logoutRepository = ref.watch(logoutRepositoryProvider);
-  return LogoutService(logoutRepository);
+  final secureStorage = ref.watch(secureStorageProvider);
+  return LogoutService(logoutRepository, secureStorage);
 });
 
 final class LogoutService implements ILogoutService, ILogoutModelMapper {
   final ILogoutRepository _logoutRepository;
-
-  LogoutService(this._logoutRepository);
+  final ISecureStorage _secureStorage;
+  LogoutService(this._logoutRepository, this._secureStorage);
 
   @override
   Future<Result<LogoutModel, Failure>> logout() async {
     try {
-      final response = await _logoutRepository.logout();
+      final refreshToken = await _secureStorage.read("refresh_token");
 
+      if (refreshToken == null) {
+        return Error(Failure(message: "No refresh token found"));
+      }
+
+      final response = await _logoutRepository.logout(
+        LogoutRequest(refreshToken: refreshToken),
+      );
       final model = mapToLogoutModel(response);
+
+      await _secureStorage.delete("refresh_token");
+      await _secureStorage.delete("access_token");
 
       return Success(model);
     } on Failure catch (e) {

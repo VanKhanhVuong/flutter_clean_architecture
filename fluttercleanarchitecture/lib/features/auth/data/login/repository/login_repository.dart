@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+// import 'package:fluttercleanarchitecture/core/data/local/secure_storage/secure_storage_const.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/login/dto/request/login_request.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/login/dto/response/login_response.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/login/repository/ilogin_repository.dart';
@@ -24,9 +25,9 @@ final class LoginRepository implements ILoginRepository {
       final response = await _loginApi.loginUser(data);
 
       final accessToken = response.accessToken;
-      final email = response.user.email;
+      final refreshToken = response.refreshToken;
 
-      await _tokenStorage.storeToken(accessToken, email);
+      await _tokenStorage.storeToken(accessToken, refreshToken);
 
       return response;
     } on DioException catch (_) {

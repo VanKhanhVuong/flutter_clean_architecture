@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:fluttercleanarchitecture/features/flashcard/presentation/controller/flashcard_controller.dart';
+import 'package:fluttercleanarchitecture/core/route/route_name.dart';
+import 'package:fluttercleanarchitecture/features/flashcard/presentation/controller/delete_flashcard_controller.dart';
+import 'package:fluttercleanarchitecture/features/flashcard/presentation/controller/flashcards_controller.dart';
 import 'package:fluttercleanarchitecture/shared/styled_text.dart';
+import 'package:go_router/go_router.dart';
 
 class FlashcardListScreen extends ConsumerStatefulWidget {
   const FlashcardListScreen({super.key});
@@ -50,6 +53,37 @@ class _FlashcardListScreenState extends ConsumerState<FlashcardListScreen> {
           child: ListTile(
             title: StyledBodyText(flashcard.question),
             subtitle: StyledBodyText(flashcard.answer),
+            trailing: SizedBox(
+              width: 96, // hoặc một giá trị phù hợp, mỗi IconButton ~ 48
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.delete),
+                    onPressed: () async {
+                      await ref
+                          .read(deleteFlashcardControllerProvider.notifier)
+                          .deleteFlashcard(flashcard.id);
+                      ref
+                          .read(flashcardControllerProvider.notifier)
+                          .getFlashcards();
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.edit),
+                    onPressed: () async {
+                      await context.pushNamed(
+                        editFlashCardRoute,
+                        extra: flashcard,
+                      );
+                      ref
+                          .read(flashcardControllerProvider.notifier)
+                          .getFlashcards();
+                    },
+                  ),
+                ],
+              ),
+            ),
           ),
         );
       },

@@ -4,7 +4,10 @@ import 'package:fluttercleanarchitecture/core/route/route_name.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/forgot_account/ui/forgot_account_screen.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/reset_password/ui/reset_password_screen.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/verify_account/ui/verify_account_screen.dart';
+import 'package:fluttercleanarchitecture/features/flashcard/data/dto/response/flashcard_response/flashcard_response.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/presentation/ui/flashcard_screen.dart';
+import 'package:fluttercleanarchitecture/features/flashcard/presentation/ui/widget/add_flashcard.dart';
+import 'package:fluttercleanarchitecture/features/flashcard/presentation/ui/widget/edit_flashcard.dart';
 import 'package:fluttercleanarchitecture/features/home/presentation/ui/home_screen.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/login/ui/login_screen.dart';
 import 'package:fluttercleanarchitecture/features/settings/presentation/ui/settings_screen.dart';
@@ -78,6 +81,22 @@ final goRouterProvider = Provider<GoRouter>((ref) {
             path: '/flash-card',
             name: flashCardRoute,
             builder: (context, state) => const FlashcardScreen(),
+            routes: [
+              GoRoute(
+                path: 'edit-flash-card',
+                name: editFlashCardRoute,
+                builder: (context, state) {
+                  final flashcard = state.extra as FlashcardResponse;
+                  return EditFlashcardView(flashcard: flashcard);
+                },
+              ),
+
+              GoRoute(
+                path: 'create-flash-card',
+                name: createFlashCardRoute,
+                builder: (context, state) => const FlashcardForm(),
+              ),
+            ],
           ),
 
           GoRoute(

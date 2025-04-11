@@ -6,3 +6,5 @@ const String settingRoute = '/setting';
 const String forgotPasswordRoute = '/forgot-password';
 const String resetPasswordRoute = '/reset-password';
 const String flashCardRoute = '/flash-card';
+const String createFlashCardRoute = 'create-flash-card';
+const String editFlashCardRoute = 'edit-flash-card';

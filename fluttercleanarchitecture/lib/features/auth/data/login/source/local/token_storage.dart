@@ -16,8 +16,8 @@ final class TokenStorage implements ITokenStorage {
   TokenStorage(this._secureStorage);
 
   @override
-  Future<void> storeToken(String accessToken, String email) async {
+  Future<void> storeToken(String accessToken, String refreshToken) async {
     await _secureStorage.write(accessTokenKey, accessToken);
-    await _secureStorage.write(emailKey, email);
+    await _secureStorage.write(refreshTokenKey, refreshToken);
   }
 }

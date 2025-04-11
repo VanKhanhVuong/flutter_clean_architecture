@@ -21,8 +21,9 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LoginResponse {
-  @JsonKey(name: "user")
-  User get user => throw _privateConstructorUsedError;
+  // @JsonKey(name: "user") required User user,
+  @JsonKey(name: "refresh_token")
+  String get refreshToken => throw _privateConstructorUsedError;
   @JsonKey(name: "access_token")
   String get accessToken => throw _privateConstructorUsedError;
   @JsonKey(name: "token_type")
@@ -46,12 +47,10 @@ abstract class $LoginResponseCopyWith<$Res> {
   ) = _$LoginResponseCopyWithImpl<$Res, LoginResponse>;
   @useResult
   $Res call({
-    @JsonKey(name: "user") User user,
+    @JsonKey(name: "refresh_token") String refreshToken,
     @JsonKey(name: "access_token") String accessToken,
     @JsonKey(name: "token_type") String tokenType,
   });
-
-  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -69,17 +68,17 @@ class _$LoginResponseCopyWithImpl<$Res, $Val extends LoginResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = null,
+    Object? refreshToken = null,
     Object? accessToken = null,
     Object? tokenType = null,
   }) {
     return _then(
       _value.copyWith(
-            user:
-                null == user
-                    ? _value.user
-                    : user // ignore: cast_nullable_to_non_nullable
-                        as User,
+            refreshToken:
+                null == refreshToken
+                    ? _value.refreshToken
+                    : refreshToken // ignore: cast_nullable_to_non_nullable
+                        as String,
             accessToken:
                 null == accessToken
                     ? _value.accessToken
@@ -94,16 +93,6 @@ class _$LoginResponseCopyWithImpl<$Res, $Val extends LoginResponse>
           as $Val,
     );
   }
-
-  /// Create a copy of LoginResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -116,13 +105,10 @@ abstract class _$$LoginResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    @JsonKey(name: "user") User user,
+    @JsonKey(name: "refresh_token") String refreshToken,
     @JsonKey(name: "access_token") String accessToken,
     @JsonKey(name: "token_type") String tokenType,
   });
-
-  @override
-  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -139,17 +125,17 @@ class __$$LoginResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = null,
+    Object? refreshToken = null,
     Object? accessToken = null,
     Object? tokenType = null,
   }) {
     return _then(
       _$LoginResponseImpl(
-        user:
-            null == user
-                ? _value.user
-                : user // ignore: cast_nullable_to_non_nullable
-                    as User,
+        refreshToken:
+            null == refreshToken
+                ? _value.refreshToken
+                : refreshToken // ignore: cast_nullable_to_non_nullable
+                    as String,
         accessToken:
             null == accessToken
                 ? _value.accessToken
@@ -169,7 +155,7 @@ class __$$LoginResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$LoginResponseImpl implements _LoginResponse {
   const _$LoginResponseImpl({
-    @JsonKey(name: "user") required this.user,
+    @JsonKey(name: "refresh_token") required this.refreshToken,
     @JsonKey(name: "access_token") required this.accessToken,
     @JsonKey(name: "token_type") required this.tokenType,
   });
@@ -177,9 +163,10 @@ class _$LoginResponseImpl implements _LoginResponse {
   factory _$LoginResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$LoginResponseImplFromJson(json);
 
+  // @JsonKey(name: "user") required User user,
   @override
-  @JsonKey(name: "user")
-  final User user;
+  @JsonKey(name: "refresh_token")
+  final String refreshToken;
   @override
   @JsonKey(name: "access_token")
   final String accessToken;
@@ -189,7 +176,7 @@ class _$LoginResponseImpl implements _LoginResponse {
 
   @override
   String toString() {
-    return 'LoginResponse(user: $user, accessToken: $accessToken, tokenType: $tokenType)';
+    return 'LoginResponse(refreshToken: $refreshToken, accessToken: $accessToken, tokenType: $tokenType)';
   }
 
   @override
@@ -197,7 +184,8 @@ class _$LoginResponseImpl implements _LoginResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginResponseImpl &&
-            (identical(other.user, user) || other.user == user) &&
+            (identical(other.refreshToken, refreshToken) ||
+                other.refreshToken == refreshToken) &&
             (identical(other.accessToken, accessToken) ||
                 other.accessToken == accessToken) &&
             (identical(other.tokenType, tokenType) ||
@@ -206,7 +194,8 @@ class _$LoginResponseImpl implements _LoginResponse {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, user, accessToken, tokenType);
+  int get hashCode =>
+      Object.hash(runtimeType, refreshToken, accessToken, tokenType);
 
   /// Create a copy of LoginResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -224,7 +213,7 @@ class _$LoginResponseImpl implements _LoginResponse {
 
 abstract class _LoginResponse implements LoginResponse {
   const factory _LoginResponse({
-    @JsonKey(name: "user") required final User user,
+    @JsonKey(name: "refresh_token") required final String refreshToken,
     @JsonKey(name: "access_token") required final String accessToken,
     @JsonKey(name: "token_type") required final String tokenType,
   }) = _$LoginResponseImpl;
@@ -232,9 +221,10 @@ abstract class _LoginResponse implements LoginResponse {
   factory _LoginResponse.fromJson(Map<String, dynamic> json) =
       _$LoginResponseImpl.fromJson;
 
+  // @JsonKey(name: "user") required User user,
   @override
-  @JsonKey(name: "user")
-  User get user;
+  @JsonKey(name: "refresh_token")
+  String get refreshToken;
   @override
   @JsonKey(name: "access_token")
   String get accessToken;

@@ -1,2 +1,2 @@
 const String accessTokenKey = 'access_token';
-const String emailKey = 'email';
+const String refreshTokenKey = 'refresh_token';

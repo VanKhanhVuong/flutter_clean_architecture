@@ -22,8 +22,6 @@ final class LoginService implements ILoginService {
     try {
       await _loginRepository.loginUser(data);
 
-      //final model = mapToLoginModel(response);
-
       return const Success(true);
     } on Failure catch (e) {
       return Error(e);

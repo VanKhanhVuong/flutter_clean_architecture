@@ -5,8 +5,9 @@ part 'logout_request.g.dart';
 
 @freezed
 class LogoutRequest with _$LogoutRequest {
-  const factory LogoutRequest() = _LogoutRequest;
-
+  const factory LogoutRequest({
+    @JsonKey(name: "refresh_token") required String refreshToken,
+  }) = _LogoutRequest;
   factory LogoutRequest.fromJson(Map<String, dynamic> json) =>
       _$LogoutRequestFromJson(json);
 }

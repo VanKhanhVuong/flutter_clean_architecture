@@ -33,15 +33,14 @@ final class NetworkServiceInterceptor extends Interceptor {
   void onError(DioException err, ErrorInterceptorHandler handler) async {
     if (err.response?.statusCode == unauthorized) {
       final token = await _tokenService.getAccessToken();
-      final emailUser = await _tokenService.getEmail();
+      final refreshToken = await _tokenService.getRefreshToken();
 
-      if (token != null && emailUser != null) {
+      if (token != null && refreshToken != null) {
         try {
-          final result = await _tokenService.refreshToken(token, emailUser);
+          final result = await _tokenService.refreshToken(refreshToken);
           final accessToken = result.accessToken;
-          final email = result.user.email;
 
-          await _tokenService.setAccessTokenEmail(accessToken, email);
+          await _tokenService.setAccessRefreshToken(accessToken, refreshToken);
 
           final options = err.requestOptions;
           options.headers['Authorization'] = 'Bearer $accessToken';
@@ -63,16 +62,4 @@ final class NetworkServiceInterceptor extends Interceptor {
     // Continue with the error
     return handler.next(err);
   }
-
-  // Future<Response<Map<String, dynamic>>> _refreshToken(
-  //   Dio dio,
-  //   String token,
-  //   String email,
-  // ) async {
-  //   return await _dio.post<Map<String, dynamic>>(
-  //     '/api/refresh',
-  //     queryParameters: {"email": email},
-  //     options: Options(headers: {'Authorization': 'Bearer $token'}),
-  //   );
-  // }
 }

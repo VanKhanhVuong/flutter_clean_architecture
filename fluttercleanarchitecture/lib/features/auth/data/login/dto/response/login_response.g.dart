@@ -8,14 +8,14 @@ part of 'login_response.dart';
 
 _$LoginResponseImpl _$$LoginResponseImplFromJson(Map<String, dynamic> json) =>
     _$LoginResponseImpl(
-      user: User.fromJson(json['user'] as Map<String, dynamic>),
+      refreshToken: json['refresh_token'] as String,
       accessToken: json['access_token'] as String,
       tokenType: json['token_type'] as String,
     );
 
 Map<String, dynamic> _$$LoginResponseImplToJson(_$LoginResponseImpl instance) =>
     <String, dynamic>{
-      'user': instance.user,
+      'refresh_token': instance.refreshToken,
       'access_token': instance.accessToken,
       'token_type': instance.tokenType,
     };
