@@ -18,12 +18,12 @@ class _ForgotAccountApi implements ForgotAccountApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<ForgotAccountResponse> forgotAccount(ForgotAccountRequest body) async {
+  Future<OnlyMessageResponse> forgotAccount(ForgotAccountRequest body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<ForgotAccountResponse>(
+    final _options = _setStreamType<OnlyMessageResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -34,9 +34,9 @@ class _ForgotAccountApi implements ForgotAccountApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ForgotAccountResponse _value;
+    late OnlyMessageResponse _value;
     try {
-      _value = ForgotAccountResponse.fromJson(_result.data!);
+      _value = OnlyMessageResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ForgotAccountState {
-  ForgotAccountModel? get forgotAccountStateModel =>
+  OnlyMessageModel? get forgotAccountStateModel =>
       throw _privateConstructorUsedError;
   bool? get isSuccess => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
@@ -40,14 +40,14 @@ abstract class $ForgotAccountStateCopyWith<$Res> {
   ) = _$ForgotAccountStateCopyWithImpl<$Res, ForgotAccountState>;
   @useResult
   $Res call({
-    ForgotAccountModel? forgotAccountStateModel,
+    OnlyMessageModel? forgotAccountStateModel,
     bool? isSuccess,
     bool isLoading,
     String? error,
     Map<String, dynamic> forgotAccountForm,
   });
 
-  $ForgotAccountModelCopyWith<$Res>? get forgotAccountStateModel;
+  $OnlyMessageModelCopyWith<$Res>? get forgotAccountStateModel;
 }
 
 /// @nodoc
@@ -77,7 +77,7 @@ class _$ForgotAccountStateCopyWithImpl<$Res, $Val extends ForgotAccountState>
                 freezed == forgotAccountStateModel
                     ? _value.forgotAccountStateModel
                     : forgotAccountStateModel // ignore: cast_nullable_to_non_nullable
-                        as ForgotAccountModel?,
+                        as OnlyMessageModel?,
             isSuccess:
                 freezed == isSuccess
                     ? _value.isSuccess
@@ -107,12 +107,12 @@ class _$ForgotAccountStateCopyWithImpl<$Res, $Val extends ForgotAccountState>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ForgotAccountModelCopyWith<$Res>? get forgotAccountStateModel {
+  $OnlyMessageModelCopyWith<$Res>? get forgotAccountStateModel {
     if (_value.forgotAccountStateModel == null) {
       return null;
     }
 
-    return $ForgotAccountModelCopyWith<$Res>(_value.forgotAccountStateModel!, (
+    return $OnlyMessageModelCopyWith<$Res>(_value.forgotAccountStateModel!, (
       value,
     ) {
       return _then(_value.copyWith(forgotAccountStateModel: value) as $Val);
@@ -130,7 +130,7 @@ abstract class _$$ForgotAccountStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call({
-    ForgotAccountModel? forgotAccountStateModel,
+    OnlyMessageModel? forgotAccountStateModel,
     bool? isSuccess,
     bool isLoading,
     String? error,
@@ -138,7 +138,7 @@ abstract class _$$ForgotAccountStateImplCopyWith<$Res>
   });
 
   @override
-  $ForgotAccountModelCopyWith<$Res>? get forgotAccountStateModel;
+  $OnlyMessageModelCopyWith<$Res>? get forgotAccountStateModel;
 }
 
 /// @nodoc
@@ -167,7 +167,7 @@ class __$$ForgotAccountStateImplCopyWithImpl<$Res>
             freezed == forgotAccountStateModel
                 ? _value.forgotAccountStateModel
                 : forgotAccountStateModel // ignore: cast_nullable_to_non_nullable
-                    as ForgotAccountModel?,
+                    as OnlyMessageModel?,
         isSuccess:
             freezed == isSuccess
                 ? _value.isSuccess
@@ -205,7 +205,7 @@ class _$ForgotAccountStateImpl implements _ForgotAccountState {
   }) : _forgotAccountForm = forgotAccountForm;
 
   @override
-  final ForgotAccountModel? forgotAccountStateModel;
+  final OnlyMessageModel? forgotAccountStateModel;
   @override
   final bool? isSuccess;
   @override
@@ -273,7 +273,7 @@ class _$ForgotAccountStateImpl implements _ForgotAccountState {
 
 abstract class _ForgotAccountState implements ForgotAccountState {
   factory _ForgotAccountState({
-    final ForgotAccountModel? forgotAccountStateModel,
+    final OnlyMessageModel? forgotAccountStateModel,
     final bool? isSuccess,
     final bool isLoading,
     final String? error,
@@ -281,7 +281,7 @@ abstract class _ForgotAccountState implements ForgotAccountState {
   }) = _$ForgotAccountStateImpl;
 
   @override
-  ForgotAccountModel? get forgotAccountStateModel;
+  OnlyMessageModel? get forgotAccountStateModel;
   @override
   bool? get isSuccess;
   @override
