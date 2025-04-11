@@ -1,6 +1,6 @@
-import 'package:fluttercleanarchitecture/features/settings/data/dto/response/logout_response.dart';
-import 'package:fluttercleanarchitecture/features/settings/domain/model/logout_model.dart';
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
+import 'package:fluttercleanarchitecture/core/domain/model/only_message_model/only_message_model.dart';
 
 abstract interface class ILogoutModelMapper {
-  LogoutModel mapToLogoutModel(LogoutResponse response);
+  OnlyMessageModel mapToLogoutModel(OnlyMessageResponse response);
 }

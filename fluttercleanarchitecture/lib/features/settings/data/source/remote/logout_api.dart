@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
 import 'package:fluttercleanarchitecture/core/data/remote/network_service.dart';
 import 'package:fluttercleanarchitecture/features/settings/data/dto/request/logout_request.dart';
-import 'package:fluttercleanarchitecture/features/settings/data/dto/response/logout_response.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'logout_api.g.dart';
@@ -17,5 +17,5 @@ abstract class LogoutApi {
   factory LogoutApi(Dio dio) => _LogoutApi(dio);
 
   @POST('/api/logout')
-  Future<LogoutResponse> logout(@Body() LogoutRequest body);
+  Future<OnlyMessageResponse> logout(@Body() LogoutRequest body);
 }

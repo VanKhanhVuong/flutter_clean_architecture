@@ -1,15 +1,14 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
 import 'package:fluttercleanarchitecture/common/exception/failure.dart';
 import 'package:fluttercleanarchitecture/core/data/local/secure_storage/isecure_storage.dart';
 import 'package:fluttercleanarchitecture/core/data/local/secure_storage/secure_storage.dart';
+import 'package:fluttercleanarchitecture/core/domain/model/only_message_model/only_message_model.dart';
 import 'package:fluttercleanarchitecture/features/settings/application/ilogout_service.dart';
 import 'package:fluttercleanarchitecture/features/settings/data/dto/request/logout_request.dart';
-// import 'package:fluttercleanarchitecture/features/settings/data/dto/request/logout_request.dart';
-import 'package:fluttercleanarchitecture/features/settings/data/dto/response/logout_response.dart';
 import 'package:fluttercleanarchitecture/features/settings/data/repository/ilogout_repository.dart';
 import 'package:fluttercleanarchitecture/features/settings/data/repository/logout_repository.dart';
 import 'package:fluttercleanarchitecture/features/settings/domain/mapper/ilogout_model_mapper.dart';
-import 'package:fluttercleanarchitecture/features/settings/domain/model/logout_model.dart';
 import 'package:multiple_result/multiple_result.dart';
 
 final logoutServiceProvider = Provider<ILogoutService>((ref) {
@@ -24,7 +23,7 @@ final class LogoutService implements ILogoutService, ILogoutModelMapper {
   LogoutService(this._logoutRepository, this._secureStorage);
 
   @override
-  Future<Result<LogoutModel, Failure>> logout() async {
+  Future<Result<OnlyMessageModel, Failure>> logout() async {
     try {
       final refreshToken = await _secureStorage.read("refresh_token");
 
@@ -55,7 +54,7 @@ final class LogoutService implements ILogoutService, ILogoutModelMapper {
   }
 
   @override
-  LogoutModel mapToLogoutModel(LogoutResponse response) {
-    return LogoutModel(success: true, message: response.message);
+  OnlyMessageModel mapToLogoutModel(OnlyMessageResponse response) {
+    return OnlyMessageModel(success: true, message: response.message);
   }
 }
