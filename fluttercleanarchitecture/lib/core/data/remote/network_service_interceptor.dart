@@ -11,7 +11,6 @@ final networkServiceInterceptorProvider =
     });
 
 final class NetworkServiceInterceptor extends Interceptor {
-  // final ISecureStorage _secureStorage;
   final ITokenService _tokenService;
   final Dio _dio;
 

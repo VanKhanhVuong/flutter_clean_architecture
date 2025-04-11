@@ -1,12 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
 import 'package:fluttercleanarchitecture/common/exception/failure.dart';
+import 'package:fluttercleanarchitecture/core/domain/model/only_message_model/only_message_model.dart';
 import 'package:fluttercleanarchitecture/features/auth/application/verify_account/iverify_account_service.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/verify_account/dto/request/verify_account/verify_account_request.dart';
-import 'package:fluttercleanarchitecture/features/auth/data/verify_account/dto/response/verify_account/verify_account_response.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/verify_account/repository/verify_account/iverify_account_repository.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/verify_account/repository/verify_account/verify_account_repository.dart';
 import 'package:fluttercleanarchitecture/features/auth/domain/mapper/iverify_account_model_mapper.dart';
-import 'package:fluttercleanarchitecture/features/auth/domain/model/verify_account/verify_account_model.dart';
 import 'package:multiple_result/multiple_result.dart';
 
 final verifyAccountServiceProvider =
@@ -25,15 +25,15 @@ final class VerifyAccountService
   VerifyAccountService(this._verifyAccountRepository);
 
   @override
-  VerifyAccountModel mapToVerifyAccountModel(VerifyAccountResponse response) {
-    return VerifyAccountModel(
+  OnlyMessageModel mapToVerifyAccountModel(OnlyMessageResponse response) {
+    return OnlyMessageModel(
       success: response.success,
       message: response.message,
     );
   }
 
   @override
-  Future<Result<VerifyAccountModel, Failure>> verifyAccount(
+  Future<Result<OnlyMessageModel, Failure>> verifyAccount(
     VerifyAccountRequest data,
   ) async {
     try {

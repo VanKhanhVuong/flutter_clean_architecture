@@ -1,6 +1,6 @@
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/signup/dto/request/register_request.dart';
-import 'package:fluttercleanarchitecture/features/auth/data/signup/dto/response/register_response.dart';
 
 abstract interface class IRegisterRepository {
-  Future<RegisterResponse> registerUser(RegisterRequest data);
+  Future<OnlyMessageResponse> registerUser(RegisterRequest data);
 }

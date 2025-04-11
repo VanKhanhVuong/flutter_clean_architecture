@@ -1,6 +1,6 @@
-import 'package:fluttercleanarchitecture/features/auth/data/signup/dto/response/register_response.dart';
-import 'package:fluttercleanarchitecture/features/auth/domain/model/register/register_model.dart';
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
+import 'package:fluttercleanarchitecture/core/domain/model/only_message_model/only_message_model.dart';
 
 abstract interface class IRegisterModelMapper {
-  RegisterModel mapToRegisterModel(RegisterResponse response);
+  OnlyMessageModel mapToRegisterModel(OnlyMessageResponse response);
 }

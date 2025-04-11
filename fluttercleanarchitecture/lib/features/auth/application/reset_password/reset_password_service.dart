@@ -1,12 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
 import 'package:fluttercleanarchitecture/common/exception/failure.dart';
+import 'package:fluttercleanarchitecture/core/domain/model/only_message_model/only_message_model.dart';
 import 'package:fluttercleanarchitecture/features/auth/application/reset_password/ireset_password_service.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/reset_password/dto/request/reset_password/reset_password_request.dart';
-import 'package:fluttercleanarchitecture/features/auth/data/reset_password/dto/response/reset_password/reset_password_response.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/reset_password/repository/reset_password/ireset_password_repository.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/reset_password/repository/reset_password/reset_password_repository.dart';
 import 'package:fluttercleanarchitecture/features/auth/domain/mapper/ireset_password_model_mapper.dart';
-import 'package:fluttercleanarchitecture/features/auth/domain/model/reset_password/reset_password_model.dart';
 import 'package:multiple_result/multiple_result.dart';
 
 final resetPasswordServiceProvider = Provider<IResetPasswordService>((ref) {
@@ -21,7 +21,7 @@ final class ResetPasswordService
   ResetPasswordService(this._resetPasswordRepository);
 
   @override
-  Future<Result<ResetPasswordModel, Failure>> resetPassword(
+  Future<Result<OnlyMessageModel, Failure>> resetPassword(
     ResetPasswordRequest data,
   ) async {
     try {
@@ -44,7 +44,7 @@ final class ResetPasswordService
   }
 
   @override
-  ResetPasswordModel mapToResetPasswordModel(ResetPasswordResponse response) {
-    return ResetPasswordModel(success: true, message: response.message);
+  OnlyMessageModel mapToResetPasswordModel(OnlyMessageResponse response) {
+    return OnlyMessageModel(success: true, message: response.message);
   }
 }

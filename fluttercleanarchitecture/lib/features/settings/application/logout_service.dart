@@ -36,9 +36,6 @@ final class LogoutService implements ILogoutService, ILogoutModelMapper {
       );
       final model = mapToLogoutModel(response);
 
-      await _secureStorage.delete("refresh_token");
-      await _secureStorage.delete("access_token");
-
       return Success(model);
     } on Failure catch (e) {
       return Error(e);

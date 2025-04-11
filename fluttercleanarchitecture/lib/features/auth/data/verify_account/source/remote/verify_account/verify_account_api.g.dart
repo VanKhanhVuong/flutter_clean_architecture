@@ -18,12 +18,12 @@ class _VerifyAccountApi implements VerifyAccountApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<VerifyAccountResponse> verifyAccount(VerifyAccountRequest body) async {
+  Future<OnlyMessageResponse> verifyAccount(VerifyAccountRequest body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<VerifyAccountResponse>(
+    final _options = _setStreamType<OnlyMessageResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -34,9 +34,9 @@ class _VerifyAccountApi implements VerifyAccountApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late VerifyAccountResponse _value;
+    late OnlyMessageResponse _value;
     try {
-      _value = VerifyAccountResponse.fromJson(_result.data!);
+      _value = OnlyMessageResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

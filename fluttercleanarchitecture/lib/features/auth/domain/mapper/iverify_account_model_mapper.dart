@@ -1,6 +1,6 @@
-import 'package:fluttercleanarchitecture/features/auth/data/verify_account/dto/response/verify_account/verify_account_response.dart';
-import 'package:fluttercleanarchitecture/features/auth/domain/model/verify_account/verify_account_model.dart';
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
+import 'package:fluttercleanarchitecture/core/domain/model/only_message_model/only_message_model.dart';
 
 abstract interface class IVerifyAccountModelMapper {
-  VerifyAccountModel mapToVerifyAccountModel(VerifyAccountResponse response);
+  OnlyMessageModel mapToVerifyAccountModel(OnlyMessageResponse response);
 }

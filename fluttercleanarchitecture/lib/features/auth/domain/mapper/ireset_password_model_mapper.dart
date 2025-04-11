@@ -1,6 +1,6 @@
-import 'package:fluttercleanarchitecture/features/auth/data/reset_password/dto/response/reset_password/reset_password_response.dart';
-import 'package:fluttercleanarchitecture/features/auth/domain/model/reset_password/reset_password_model.dart';
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
+import 'package:fluttercleanarchitecture/core/domain/model/only_message_model/only_message_model.dart';
 
 abstract interface class IResetPasswordModelMapper {
-  ResetPasswordModel mapToResetPasswordModel(ResetPasswordResponse response);
+  OnlyMessageModel mapToResetPasswordModel(OnlyMessageResponse response);
 }

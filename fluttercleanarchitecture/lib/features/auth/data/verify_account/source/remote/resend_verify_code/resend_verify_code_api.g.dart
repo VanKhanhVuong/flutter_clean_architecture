@@ -18,14 +18,14 @@ class _ResendVerifyCodeApi implements ResendVerifyCodeApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<ResendVerifyCodeResponse> resendVerifyCode(
+  Future<OnlyMessageResponse> resendVerifyCode(
     ResendVerifyCodeRequest body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<ResendVerifyCodeResponse>(
+    final _options = _setStreamType<OnlyMessageResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -36,9 +36,9 @@ class _ResendVerifyCodeApi implements ResendVerifyCodeApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResendVerifyCodeResponse _value;
+    late OnlyMessageResponse _value;
     try {
-      _value = ResendVerifyCodeResponse.fromJson(_result.data!);
+      _value = OnlyMessageResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

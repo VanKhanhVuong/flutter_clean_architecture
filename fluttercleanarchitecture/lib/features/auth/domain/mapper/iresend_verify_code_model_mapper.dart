@@ -1,8 +1,6 @@
-import 'package:fluttercleanarchitecture/features/auth/data/verify_account/dto/response/resend_verify_code/resend_verify_code_response.dart';
-import 'package:fluttercleanarchitecture/features/auth/domain/model/resend_verify_code/resend_verify_code_model.dart';
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
+import 'package:fluttercleanarchitecture/core/domain/model/only_message_model/only_message_model.dart';
 
 abstract interface class IResendVerifyCodeModelMapper {
-  ResendVerifyCodeModel mapToResendVerifyCodeModel(
-    ResendVerifyCodeResponse response,
-  );
+  OnlyMessageModel mapToResendVerifyCodeModel(OnlyMessageResponse response);
 }
