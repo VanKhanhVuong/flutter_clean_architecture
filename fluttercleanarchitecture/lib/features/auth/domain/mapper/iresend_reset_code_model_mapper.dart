@@ -1,8 +1,6 @@
-import 'package:fluttercleanarchitecture/features/auth/data/reset_password/dto/response/resend_reset_code/resend_reset_code_response.dart';
-import 'package:fluttercleanarchitecture/features/auth/domain/model/resend_reset_code/resend_reset_code_model.dart';
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
+import 'package:fluttercleanarchitecture/core/domain/model/only_message_model/only_message_model.dart';
 
 abstract interface class IResendResetCodeModelMapper {
-  ResendResetCodeModel mapToResendResetCodeModel(
-    ResendResetCodeResponse response,
-  );
+  OnlyMessageModel mapToResendResetCodeModel(OnlyMessageResponse response);
 }

@@ -1,10 +1,10 @@
+import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
+import 'package:fluttercleanarchitecture/core/domain/model/only_message_model/only_message_model.dart';
 import 'package:fluttercleanarchitecture/features/auth/application/resend_reset_code/iresend_reset_code_service.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/reset_password/dto/request/resend_reset_code/resend_reset_code_request.dart';
-import 'package:fluttercleanarchitecture/features/auth/data/reset_password/dto/response/resend_reset_code/resend_reset_code_response.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/reset_password/repository/resend_reset_code/iresend_reset_code_repository.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/reset_password/repository/resend_reset_code/resend_reset_code_repository.dart';
 import 'package:fluttercleanarchitecture/features/auth/domain/mapper/iresend_reset_code_model_mapper.dart';
-import 'package:fluttercleanarchitecture/features/auth/domain/model/resend_reset_code/resend_reset_code_model.dart';
 import 'package:multiple_result/multiple_result.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/exception/failure.dart';
@@ -23,7 +23,7 @@ final class ResendResetCodeService
   ResendResetCodeService(this._resendResetCodeRepository);
 
   @override
-  Future<Result<ResendResetCodeModel, Failure>> resendResetCode(
+  Future<Result<OnlyMessageModel, Failure>> resendResetCode(
     ResendResetCodeRequest data,
   ) async {
     try {
@@ -46,9 +46,7 @@ final class ResendResetCodeService
   }
 
   @override
-  ResendResetCodeModel mapToResendResetCodeModel(
-    ResendResetCodeResponse response,
-  ) {
-    return ResendResetCodeModel(success: true, message: response.message);
+  OnlyMessageModel mapToResendResetCodeModel(OnlyMessageResponse response) {
+    return OnlyMessageModel(success: true, message: response.message);
   }
 }

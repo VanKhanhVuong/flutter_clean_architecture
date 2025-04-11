@@ -18,14 +18,14 @@ class _ResendResetCodeApi implements ResendResetCodeApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<ResendResetCodeResponse> resendResetCode(
+  Future<OnlyMessageResponse> resendResetCode(
     ResendResetCodeRequest body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<ResendResetCodeResponse>(
+    final _options = _setStreamType<OnlyMessageResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -36,9 +36,9 @@ class _ResendResetCodeApi implements ResendResetCodeApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ResendResetCodeResponse _value;
+    late OnlyMessageResponse _value;
     try {
-      _value = ResendResetCodeResponse.fromJson(_result.data!);
+      _value = OnlyMessageResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
