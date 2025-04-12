@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
 import 'package:fluttercleanarchitecture/common/exception/failure.dart';
@@ -18,8 +19,15 @@ final class LogoutRepository implements ILogoutRepository {
     try {
       final response = await _logoutApi.logout(data);
       return response;
-    } catch (e) {
-      throw Failure(message: e.toString(), exception: e as Exception);
+    } on DioException catch (e) {
+      final errorMessage = e.response?.data['error'] ?? 'Unknown error';
+      throw Failure(message: errorMessage);
+    } catch (e, s) {
+      throw Failure(
+        message: 'Unexpected error: $e',
+        exception: e is Exception ? e : Exception(e.toString()),
+        stackTrace: s,
+      );
     }
   }
 }

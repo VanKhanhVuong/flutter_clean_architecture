@@ -23,6 +23,7 @@ class FlashcardController extends AutoDisposeNotifier<FlashcardsState> {
 
       final result =
           await ref.read(flashcardsServiceProvider).getAllFlashcards();
+
       result.when(
         (success) {
           state = state.copyWith(

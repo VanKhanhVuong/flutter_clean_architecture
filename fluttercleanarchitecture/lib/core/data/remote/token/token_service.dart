@@ -23,6 +23,7 @@ class TokenService implements ITokenService {
     return Future.wait([
       _secureStorage.delete(accessTokenKey),
       _secureStorage.delete(refreshTokenKey),
+      _secureStorage.delete(userIdKey),
     ]);
   }
 

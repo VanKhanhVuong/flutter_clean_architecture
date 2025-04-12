@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/extension/string_hardcoded.dart';
 import 'package:fluttercleanarchitecture/common/style/dimens.dart';
-import 'package:fluttercleanarchitecture/core/utils/validators.dart';
+import 'package:fluttercleanarchitecture/common/utils/validators.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/signup/controller/register_controller.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/signup/ui/widget/already_have_account.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/signup/ui/widget/signup_button.dart';
@@ -17,7 +17,7 @@ class SignUpFormList extends ConsumerStatefulWidget {
 }
 
 class _SignUpFormListState extends ConsumerState<SignUpFormList> {
-  late final String tempEmail;
+  // late final String tempEmail;
 
   // form key
   final _formKey = GlobalKey<FormState>();
@@ -142,7 +142,7 @@ class _SignUpFormListState extends ConsumerState<SignUpFormList> {
                   onPressed: () {
                     // close dialog
                     context.pop();
-                    tempEmail = _emailController.text;
+                    // tempEmail = _emailController.text;
                     // clear controllers
                     _clearController();
                     // navigate to Verify Account screen
@@ -171,7 +171,7 @@ class _SignUpFormListState extends ConsumerState<SignUpFormList> {
 
   void _navigateToVerifyAccount() {
     // Lấy giá trị email từ controller và thêm vào query params
-    context.go('/signup/verify-account?email=$tempEmail');
+    context.go('/signup/verify-account?email=${_emailController.text}');
   }
 
   void _onSubmit() {

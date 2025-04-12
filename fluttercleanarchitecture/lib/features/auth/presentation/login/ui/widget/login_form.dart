@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/extension/string_hardcoded.dart';
 import 'package:fluttercleanarchitecture/common/style/dimens.dart';
-import 'package:fluttercleanarchitecture/core/utils/validators.dart';
+import 'package:fluttercleanarchitecture/common/utils/validators.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/login/controller/login_controller.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/login/ui/widget/dont_have_account.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/login/ui/widget/forgot_password.dart';

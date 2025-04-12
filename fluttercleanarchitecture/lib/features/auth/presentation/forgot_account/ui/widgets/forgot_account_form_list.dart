@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/extension/string_hardcoded.dart';
 import 'package:fluttercleanarchitecture/common/style/dimens.dart';
-import 'package:fluttercleanarchitecture/core/utils/validators.dart';
+import 'package:fluttercleanarchitecture/common/utils/validators.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/forgot_account/controller/forgot_account_controller.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/forgot_account/ui/widgets/get_verify_code_button.dart';
 import 'package:fluttercleanarchitecture/shared/styled_textfield.dart';
@@ -17,7 +17,6 @@ class ForgotAccountFormList extends ConsumerStatefulWidget {
 }
 
 class _ForgotAccountFormListState extends ConsumerState<ForgotAccountFormList> {
-  late final String tempEmail;
   // form key
   final _formKey = GlobalKey<FormState>();
 
@@ -85,8 +84,9 @@ class _ForgotAccountFormListState extends ConsumerState<ForgotAccountFormList> {
     // listen for success
     ref.listen(
       forgotAccountControllerProvider.select((value) => value.isSuccess),
-      (_, next) {
-        if (next != null && next) {
+      (previous, next) {
+        final error = ref.read(forgotAccountControllerProvider).error;
+        if (next != null && next && error == "") {
           showDialog(
             context: context,
             barrierDismissible: false,
@@ -125,16 +125,17 @@ class _ForgotAccountFormListState extends ConsumerState<ForgotAccountFormList> {
 
   void _navigateToVerifyForgotAccount() {
     // Lấy giá trị email từ controller và thêm vào query params
-    context.go('/forgot-password/reset-password?email=$tempEmail');
+    context.go(
+      '/forgot-password/reset-password?email=${_emailController.text}',
+    );
   }
 
   void _onSubmit() {
-    tempEmail = _emailController.text;
     final isValid = _formKey.currentState?.validate() ?? false;
 
     if (isValid) {
       // collect form data from controllers
-      final formData = {'email': tempEmail};
+      final formData = {'email': _emailController.text};
 
       // set form data
       ref.read(forgotAccountControllerProvider.notifier).setFormData(formData);

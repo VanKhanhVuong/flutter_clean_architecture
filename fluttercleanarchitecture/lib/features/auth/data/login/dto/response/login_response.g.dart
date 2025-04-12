@@ -11,6 +11,7 @@ _$LoginResponseImpl _$$LoginResponseImplFromJson(Map<String, dynamic> json) =>
       refreshToken: json['refresh_token'] as String,
       accessToken: json['access_token'] as String,
       tokenType: json['token_type'] as String,
+      user: User.fromJson(json['user'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$LoginResponseImplToJson(_$LoginResponseImpl instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$LoginResponseImplToJson(_$LoginResponseImpl instance) =>
       'refresh_token': instance.refreshToken,
       'access_token': instance.accessToken,
       'token_type': instance.tokenType,
+      'user': instance.user,
     };

@@ -21,13 +21,14 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LoginResponse {
-  // @JsonKey(name: "user") required User user,
   @JsonKey(name: "refresh_token")
   String get refreshToken => throw _privateConstructorUsedError;
   @JsonKey(name: "access_token")
   String get accessToken => throw _privateConstructorUsedError;
   @JsonKey(name: "token_type")
   String get tokenType => throw _privateConstructorUsedError;
+  @JsonKey(name: "user")
+  User get user => throw _privateConstructorUsedError;
 
   /// Serializes this LoginResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,7 +51,10 @@ abstract class $LoginResponseCopyWith<$Res> {
     @JsonKey(name: "refresh_token") String refreshToken,
     @JsonKey(name: "access_token") String accessToken,
     @JsonKey(name: "token_type") String tokenType,
+    @JsonKey(name: "user") User user,
   });
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -71,6 +75,7 @@ class _$LoginResponseCopyWithImpl<$Res, $Val extends LoginResponse>
     Object? refreshToken = null,
     Object? accessToken = null,
     Object? tokenType = null,
+    Object? user = null,
   }) {
     return _then(
       _value.copyWith(
@@ -89,9 +94,24 @@ class _$LoginResponseCopyWithImpl<$Res, $Val extends LoginResponse>
                     ? _value.tokenType
                     : tokenType // ignore: cast_nullable_to_non_nullable
                         as String,
+            user:
+                null == user
+                    ? _value.user
+                    : user // ignore: cast_nullable_to_non_nullable
+                        as User,
           )
           as $Val,
     );
+  }
+
+  /// Create a copy of LoginResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
   }
 }
 
@@ -108,7 +128,11 @@ abstract class _$$LoginResponseImplCopyWith<$Res>
     @JsonKey(name: "refresh_token") String refreshToken,
     @JsonKey(name: "access_token") String accessToken,
     @JsonKey(name: "token_type") String tokenType,
+    @JsonKey(name: "user") User user,
   });
+
+  @override
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -128,6 +152,7 @@ class __$$LoginResponseImplCopyWithImpl<$Res>
     Object? refreshToken = null,
     Object? accessToken = null,
     Object? tokenType = null,
+    Object? user = null,
   }) {
     return _then(
       _$LoginResponseImpl(
@@ -146,6 +171,11 @@ class __$$LoginResponseImplCopyWithImpl<$Res>
                 ? _value.tokenType
                 : tokenType // ignore: cast_nullable_to_non_nullable
                     as String,
+        user:
+            null == user
+                ? _value.user
+                : user // ignore: cast_nullable_to_non_nullable
+                    as User,
       ),
     );
   }
@@ -158,12 +188,12 @@ class _$LoginResponseImpl implements _LoginResponse {
     @JsonKey(name: "refresh_token") required this.refreshToken,
     @JsonKey(name: "access_token") required this.accessToken,
     @JsonKey(name: "token_type") required this.tokenType,
+    @JsonKey(name: "user") required this.user,
   });
 
   factory _$LoginResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$LoginResponseImplFromJson(json);
 
-  // @JsonKey(name: "user") required User user,
   @override
   @JsonKey(name: "refresh_token")
   final String refreshToken;
@@ -173,10 +203,13 @@ class _$LoginResponseImpl implements _LoginResponse {
   @override
   @JsonKey(name: "token_type")
   final String tokenType;
+  @override
+  @JsonKey(name: "user")
+  final User user;
 
   @override
   String toString() {
-    return 'LoginResponse(refreshToken: $refreshToken, accessToken: $accessToken, tokenType: $tokenType)';
+    return 'LoginResponse(refreshToken: $refreshToken, accessToken: $accessToken, tokenType: $tokenType, user: $user)';
   }
 
   @override
@@ -189,13 +222,14 @@ class _$LoginResponseImpl implements _LoginResponse {
             (identical(other.accessToken, accessToken) ||
                 other.accessToken == accessToken) &&
             (identical(other.tokenType, tokenType) ||
-                other.tokenType == tokenType));
+                other.tokenType == tokenType) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, refreshToken, accessToken, tokenType);
+      Object.hash(runtimeType, refreshToken, accessToken, tokenType, user);
 
   /// Create a copy of LoginResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -216,12 +250,12 @@ abstract class _LoginResponse implements LoginResponse {
     @JsonKey(name: "refresh_token") required final String refreshToken,
     @JsonKey(name: "access_token") required final String accessToken,
     @JsonKey(name: "token_type") required final String tokenType,
+    @JsonKey(name: "user") required final User user,
   }) = _$LoginResponseImpl;
 
   factory _LoginResponse.fromJson(Map<String, dynamic> json) =
       _$LoginResponseImpl.fromJson;
 
-  // @JsonKey(name: "user") required User user,
   @override
   @JsonKey(name: "refresh_token")
   String get refreshToken;
@@ -231,6 +265,9 @@ abstract class _LoginResponse implements LoginResponse {
   @override
   @JsonKey(name: "token_type")
   String get tokenType;
+  @override
+  @JsonKey(name: "user")
+  User get user;
 
   /// Create a copy of LoginResponse
   /// with the given fields replaced by the non-null parameter values.

@@ -35,13 +35,4 @@ final class LoginService implements ILoginService {
       );
     }
   }
-
-  // @override
-  // LoginModel mapToLoginModel(LoginResponse response) {
-  //   return LoginModel(
-  //     accessToken: response.accessToken,
-  //     user: response.user,
-  //     tokenType: response.tokenType,
-  //   );
-  // }
 }

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/core/data/remote/network_service.dart';
+import 'package:fluttercleanarchitecture/features/flashcard/data/dto/request/get_flashcards_request/get_flashcards_request.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/data/dto/response/flashcards_response/flashcards_response.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -16,5 +17,7 @@ abstract class FlashcardsApi {
   factory FlashcardsApi(Dio dio) => _FlashcardsApi(dio);
 
   @GET('/api/flashcards')
-  Future<FlashcardsResponse> getFlashcards();
+  Future<FlashcardsResponse> getFlashcards(
+    @Queries() GetFlashcardsRequest query,
+  );
 }

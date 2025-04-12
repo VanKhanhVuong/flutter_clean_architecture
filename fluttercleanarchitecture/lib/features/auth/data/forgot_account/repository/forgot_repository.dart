@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
+import 'package:fluttercleanarchitecture/common/utils/parse_error_util.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/forgot_account/dto/request/forgot_account_request.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/forgot_account/repository/iforgot_repository.dart';
 import 'package:fluttercleanarchitecture/features/auth/data/forgot_account/source/remote/forgot_account_api.dart';
+import 'package:fluttercleanarchitecture/common/exception/failure.dart';
 
 final forgotAccountRepositoryProvider = Provider<IForgotAccountRepository>((
   ref,
@@ -17,12 +19,19 @@ final class ForgotAccountRepository implements IForgotAccountRepository {
   ForgotAccountRepository(this._forgotAccountApi);
 
   @override
-  Future<OnlyMessageResponse> forgotAccount(ForgotAccountRequest data) {
+  Future<OnlyMessageResponse> forgotAccount(ForgotAccountRequest data) async {
     try {
-      final response = _forgotAccountApi.forgotAccount(data);
+      final response = await _forgotAccountApi.forgotAccount(data);
       return response;
-    } on DioException catch (_) {
-      rethrow;
+    } on DioException catch (e) {
+      final errorMessage = parseValidationError(e.response?.data['error']);
+      throw Failure(message: errorMessage);
+    } catch (e, s) {
+      throw Failure(
+        message: 'Unexpected error: $e',
+        exception: e is Exception ? e : Exception(e.toString()),
+        stackTrace: s,
+      );
     }
   }
 }

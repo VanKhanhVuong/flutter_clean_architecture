@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/extension/string_hardcoded.dart';
 import 'package:fluttercleanarchitecture/common/style/dimens.dart';
-import 'package:fluttercleanarchitecture/core/utils/validators.dart';
+import 'package:fluttercleanarchitecture/common/utils/validators.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/reset_password/controller/resend_reset_code_controller.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/reset_password/controller/reset_password_controller.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/reset_password/ui/widgets/reset_password_button.dart';
@@ -20,7 +20,7 @@ class ResetPasswordFormList extends ConsumerStatefulWidget {
 }
 
 class _ResetPasswordFormListState extends ConsumerState<ResetPasswordFormList> {
-  late final String tempEmail;
+  // late final String tempEmail;
 
   // form key
   final _formKey = GlobalKey<FormState>();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:fluttercleanarchitecture/core/utils/validators.dart';
+import 'package:fluttercleanarchitecture/common/utils/validators.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/verify_account/controller/resend_verify_code_controller.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/verify_account/controller/verify_account_controller.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/verify_account/ui/widgets/resend_verify_code_button.dart';

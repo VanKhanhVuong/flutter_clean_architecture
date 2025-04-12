@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/common/dtos/only_message_response/only_message_response.dart';
+import 'package:fluttercleanarchitecture/common/utils/parse_error_util.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/data/dto/request/create_flashcard_request/create_flashcard_request.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/data/dto/request/delete_flashcard_request/delete_flashcard_request.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/data/dto/request/edit_flashcard_request/edit_flashcard_request.dart';
@@ -11,6 +12,7 @@ import 'package:fluttercleanarchitecture/features/flashcard/data/source/remote/c
 import 'package:fluttercleanarchitecture/features/flashcard/data/source/remote/delete_flashcard/delete_flashcard_api.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/data/source/remote/edit_flashcard/edit_flashcard_api.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/data/source/remote/get_flashcards/flashcards_api.dart';
+import 'package:fluttercleanarchitecture/common/exception/failure.dart';
 
 final flashcardsRepositoryProvider = Provider<IFlashcardRepository>((ref) {
   final flashcardsApi = ref.watch(flashcardsApiProvider);
@@ -40,44 +42,76 @@ final class FlashcardRepository implements IFlashcardRepository {
   );
 
   @override
-  Future<FlashcardsResponse> getFlashcards() {
+  Future<FlashcardsResponse> getFlashcards(data) async {
     try {
-      final response = _flashcardsApi.getFlashcards();
+      final response = _flashcardsApi.getFlashcards(data);
       return response;
-    } on DioException catch (_) {
-      rethrow;
+    } on DioException catch (e) {
+      final errorMessage = parseValidationError(e.response?.data['error']);
+      throw Failure(message: errorMessage);
+    } catch (e, s) {
+      throw Failure(
+        message: 'Unexpected error: $e',
+        exception: e is Exception ? e : Exception(e.toString()),
+        stackTrace: s,
+      );
     }
   }
 
   @override
-  Future<FlashcardItemResponse> addFlashcard(CreateFlashcardRequest flashcard) {
+  Future<FlashcardItemResponse> addFlashcard(
+    CreateFlashcardRequest flashcard,
+  ) async {
     try {
-      final response = _createFlashcardApi.createFlashcard(flashcard);
+      final response = await _createFlashcardApi.createFlashcard(flashcard);
       return response;
-    } on DioException catch (_) {
-      rethrow;
+    } on DioException catch (e) {
+      final errorMessage = parseValidationError(e.response?.data['error']);
+      throw Failure(message: errorMessage);
+    } catch (e, s) {
+      throw Failure(
+        message: 'Unexpected error: $e',
+        exception: e is Exception ? e : Exception(e.toString()),
+        stackTrace: s,
+      );
     }
   }
 
   @override
-  Future<FlashcardItemResponse> editFlashcard(EditFlashcardRequest flashcard) {
+  Future<FlashcardItemResponse> editFlashcard(
+    EditFlashcardRequest flashcard,
+  ) async {
     try {
-      final response = _editFlashcardApi.editFlashcard(flashcard);
+      final response = await _editFlashcardApi.editFlashcard(flashcard);
       return response;
-    } on DioException catch (_) {
-      rethrow;
+    } on DioException catch (e) {
+      final errorMessage = parseValidationError(e.response?.data['error']);
+      throw Failure(message: errorMessage);
+    } catch (e, s) {
+      throw Failure(
+        message: 'Unexpected error: $e',
+        exception: e is Exception ? e : Exception(e.toString()),
+        stackTrace: s,
+      );
     }
   }
 
   @override
   Future<OnlyMessageResponse> deleteFlashcard(
     DeleteFlashcardRequest flashcard,
-  ) {
+  ) async {
     try {
-      final response = _deleteFlashcardApi.deleteFlashcard(flashcard);
+      final response = await _deleteFlashcardApi.deleteFlashcard(flashcard);
       return response;
-    } on DioException catch (_) {
-      rethrow;
+    } on DioException catch (e) {
+      final errorMessage = parseValidationError(e.response?.data['error']);
+      throw Failure(message: errorMessage);
+    } catch (e, s) {
+      throw Failure(
+        message: 'Unexpected error: $e',
+        exception: e is Exception ? e : Exception(e.toString()),
+        stackTrace: s,
+      );
     }
   }
 }
