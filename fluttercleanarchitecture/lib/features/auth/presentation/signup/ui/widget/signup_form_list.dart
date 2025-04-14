@@ -17,8 +17,6 @@ class SignUpFormList extends ConsumerStatefulWidget {
 }
 
 class _SignUpFormListState extends ConsumerState<SignUpFormList> {
-  // late final String tempEmail;
-
   // form key
   final _formKey = GlobalKey<FormState>();
 
@@ -142,11 +140,12 @@ class _SignUpFormListState extends ConsumerState<SignUpFormList> {
                   onPressed: () {
                     // close dialog
                     context.pop();
-                    // tempEmail = _emailController.text;
-                    // clear controllers
-                    _clearController();
+
                     // navigate to Verify Account screen
                     _navigateToVerifyAccount();
+
+                    // Clear controller
+                    _clearController();
                   },
                   child: Text('Ok'.hardcoded),
                 ),

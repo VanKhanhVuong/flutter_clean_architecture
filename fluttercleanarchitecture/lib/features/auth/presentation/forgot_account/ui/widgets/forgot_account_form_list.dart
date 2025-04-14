@@ -85,8 +85,8 @@ class _ForgotAccountFormListState extends ConsumerState<ForgotAccountFormList> {
     ref.listen(
       forgotAccountControllerProvider.select((value) => value.isSuccess),
       (previous, next) {
-        final error = ref.read(forgotAccountControllerProvider).error;
-        if (next != null && next && error == "") {
+        // final error = ref.read(forgotAccountControllerProvider).error;
+        if (next != null && next) {
           showDialog(
             context: context,
             barrierDismissible: false,
@@ -103,10 +103,11 @@ class _ForgotAccountFormListState extends ConsumerState<ForgotAccountFormList> {
                       // close dialog
                       context.pop();
 
-                      // clear controllers
-                      _clearController();
                       // navigate to Verify Account screen
                       _navigateToVerifyForgotAccount();
+
+                      // clear controllers
+                      _clearController();
                     },
                     child: Text('Ok'.hardcoded),
                   ),

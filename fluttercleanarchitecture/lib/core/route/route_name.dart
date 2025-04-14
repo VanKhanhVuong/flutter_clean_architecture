@@ -8,3 +8,4 @@ const String resetPasswordRoute = '/reset-password';
 const String flashCardRoute = '/flash-card';
 const String createFlashCardRoute = 'create-flash-card';
 const String editFlashCardRoute = 'edit-flash-card';
+const String videoPlayerRoute = '/video-player';

@@ -39,6 +39,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               },
               child: Text('Flashcard'.hardcoded),
             ),
+
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to video player screen
+                context.push('/home/video-player');
+              },
+              child: Text('Video Player'.hardcoded),
+            ),
           ],
         ),
       ),

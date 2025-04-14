@@ -42,8 +42,6 @@ class ForgotAccountController extends AutoDisposeNotifier<ForgotAccountState> {
           );
         },
       );
-      // Simulate a successful response
-      state = state.copyWith(isLoading: false, isSuccess: true, error: null);
     } catch (e) {
       state = state.copyWith(
         isLoading: false,

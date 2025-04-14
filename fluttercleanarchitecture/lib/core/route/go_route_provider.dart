@@ -8,6 +8,7 @@ import 'package:fluttercleanarchitecture/features/flashcard/data/dto/response/fl
 import 'package:fluttercleanarchitecture/features/flashcard/presentation/ui/flashcard_screen.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/presentation/ui/widget/add_flashcard.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/presentation/ui/widget/edit_flashcard.dart';
+import 'package:fluttercleanarchitecture/features/flashcard/presentation/ui/widget/video_player.dart';
 import 'package:fluttercleanarchitecture/features/home/presentation/ui/home_screen.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/login/ui/login_screen.dart';
 import 'package:fluttercleanarchitecture/features/settings/presentation/ui/settings_screen.dart';
@@ -103,6 +104,12 @@ final goRouterProvider = Provider<GoRouter>((ref) {
             path: '/setting',
             name: settingRoute,
             builder: (context, state) => const SettingScreen(),
+          ),
+
+          GoRoute(
+            path: '/video-player',
+            name: videoPlayerRoute,
+            builder: (context, state) => const VideoPlayerScreen(),
           ),
         ],
       ),
