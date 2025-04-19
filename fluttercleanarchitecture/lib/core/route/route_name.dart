@@ -9,3 +9,5 @@ const String flashCardRoute = '/flash-card';
 const String createFlashCardRoute = 'create-flash-card';
 const String editFlashCardRoute = 'edit-flash-card';
 const String videoPlayerRoute = '/video-player';
+const String deleteAccountRoute = 'delete-account';
+const String verifyDeleteAccountRoute = 'verify-delete-account';

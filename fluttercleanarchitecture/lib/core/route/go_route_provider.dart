@@ -1,9 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fluttercleanarchitecture/core/provider/auth_state_provider.dart';
 import 'package:fluttercleanarchitecture/core/route/route_name.dart';
+import 'package:fluttercleanarchitecture/features/auth/presentation/delete_account/ui/delete_account_screen.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/forgot_account/ui/forgot_account_screen.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/reset_password/ui/reset_password_screen.dart';
 import 'package:fluttercleanarchitecture/features/auth/presentation/verify_account/ui/verify_account_screen.dart';
+import 'package:fluttercleanarchitecture/features/auth/presentation/verify_delete_account/ui/verify_delete_account_screen.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/data/dto/response/flashcard_response/flashcard_response.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/presentation/ui/flashcard_screen.dart';
 import 'package:fluttercleanarchitecture/features/flashcard/presentation/ui/widget/add_flashcard.dart';
@@ -104,6 +106,23 @@ final goRouterProvider = Provider<GoRouter>((ref) {
             path: '/setting',
             name: settingRoute,
             builder: (context, state) => const SettingScreen(),
+            routes: [
+              GoRoute(
+                path: 'delete-account',
+                name: deleteAccountRoute,
+                builder: (context, state) => const DeleteAccountScreen(),
+                routes: [
+                  GoRoute(
+                    path: 'verify-delete-account',
+                    name: verifyDeleteAccountRoute,
+                    builder: (context, state) {
+                      final email = state.uri.queryParameters['email'] ?? '';
+                      return VerifyDeleteAccountScreen(email: email);
+                    },
+                  ),
+                ],
+              ),
+            ],
           ),
 
           GoRoute(
